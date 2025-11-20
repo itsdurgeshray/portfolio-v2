@@ -151,14 +151,11 @@
             left: 0;
             width: 100%;
             height: 100%;
-            z-index: -1;
+            /* CHANGED: z-index 0 ensures it sits on top of body background but behind z-10 content */
+            z-index: 0; 
             opacity: 0.6;
             pointer-events: none;
             mix-blend-mode: screen;
-        }
-        media-shader {
-            width: 100%;
-            height: 100%;
         }
     </style>
 </head>
@@ -215,10 +212,7 @@
         
         <!-- Shader Background (God Rays) -->
         <div class="shader-bg">
-            <media-shader
-                width="100%" 
-                height="100%"
-                fragment-shader='#version 300 es
+            <media-shader width="100%" height="100%" fragment-shader="#version 300 es
             precision highp float;
             out vec4 glFragColor;
             uniform vec2 u_resolution;
@@ -571,8 +565,7 @@
                 float brightness = 1.0*u_reach - (coord.y / u_resolution.y);
                 fragColor *= (brightness + (0.5+ u_intensity));
                 glFragColor = fragColor;
-            }'
-            uniforms='{"u_colors":[[0.5098039215686274,0.615686274509804,0.9450980392156862,1],[0.6431372549019608,0.7215686274509804,0.9568627450980393,1]],"u_intensity":0.946,"u_rays":0.021,"u_reach":0.221}'>
+            }" uniforms='{"u_colors":[[0.5098039215686274,0.615686274509804,0.9450980392156862,1],[0.6431372549019608,0.7215686274509804,0.9568627450980393,1]],"u_intensity":0.946,"u_rays":0.021,"u_reach":0.221}'>
             </media-shader>
         </div>
 
