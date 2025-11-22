@@ -168,17 +168,25 @@
         </div>
 
         <!-- The Poem -->
-        <article class="w-full max-w-4xl mx-auto text-center reveal delay-200 px-2">
+        <article class="w-full max-w-4xl mx-auto text-center reveal delay-200 px-4 relative z-20">
             <!-- 
-                FIX APPLIED:
-                1. whitespace-nowrap: Forces text to stay on one line (No Wrapping).
-                2. text-[3.5vw]: Calculates font size based on screen width. 
-                   (On mobile it shrinks to fit. On desktop it hits the md: breakpoint).
-                3. md:text-3xl: Resets to big comfortable text on larger screens.
-                4. No overflow/scroll classes needed anymore.
+                FINAL LOGIC:
+                1. Mobile: 
+                   - whitespace-normal: Allows lines to break if they hit the screen edge.
+                   - [text-wrap:balance]: Ensures the break is symmetrical (no orphaned words).
+                   - text-xl: Readable size.
+                
+                2. Desktop (md:):
+                   - md:whitespace-nowrap: Forces strict single-line format.
+                   - md:text-3xl: Larger, elegant size.
+                   - overflow-hidden: Ensures no scrollbars appear.
             -->
-            <div class="font-reading font-light tracking-wide text-slate-500 whitespace-nowrap 
-                        text-[3.5vw] sm:text-xl md:text-3xl leading-[1.8]">
+            <div class="font-reading text-slate-400 tracking-wide
+                        text-xl md:text-3xl 
+                        font-normal md:font-light 
+                        whitespace-normal md:whitespace-nowrap 
+                        leading-snug md:leading-[1.8]
+                        [text-wrap:balance] md:[text-wrap:unset]">
                 
                 <p class="mb-10 hover:text-white transition-colors duration-700 ease-out cursor-default">
                     Eyes on noisy sky full of stars<br>
