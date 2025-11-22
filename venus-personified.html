@@ -167,16 +167,16 @@
             </div>
         </div>
 
-        <!-- The Poem -->
-        <article class="max-w-4xl w-full text-center reveal delay-200 overflow-x-auto no-scrollbar">
+<!-- The Poem -->
+        <article class="w-full max-w-4xl reveal delay-200 overflow-x-auto no-scrollbar">
             <!-- 
-                UPDATES:
-                1. whitespace-nowrap: Prevents line breaking.
-                2. leading-[1.5]: Tighter line spacing.
-                3. text-slate-500: Darker default text.
-                4. font-reading font-light: Thinner Cormorant Garamond.
+                FIX APPLIED:
+                1. w-fit: The container takes the exact width of the text.
+                2. mx-auto: Centers the container if it's smaller than the screen.
+                3. whitespace-nowrap: Strict "no wrapping" rule.
+                4. px-6: Adds side padding on mobile so text doesn't touch edges while scrolling.
             -->
-            <div class="font-reading text-xl md:text-3xl leading-[1.5] text-slate-500 font-light tracking-wide whitespace-nowrap inline-block min-w-min px-4">
+            <div class="w-fit mx-auto px-6 md:px-0 font-reading text-xl md:text-3xl leading-[1.5] text-slate-500 font-light tracking-wide whitespace-nowrap text-center">
                 
                 <p class="mb-10 hover:text-white transition-colors duration-700 ease-out cursor-default">
                     Eyes on noisy sky full of stars<br>
