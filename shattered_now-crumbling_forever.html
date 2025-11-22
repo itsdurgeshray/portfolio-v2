@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth bg-[#020617] text-[#e2e8f0]">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- SEO -->
+    <title>Shattered Now | Durgesh Ray</title>
+    <meta name="description" content="A poem by Durgesh Ray.">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Media Shader -->
+    <script src="https://unpkg.com/media-shader@latest/media-shader.js"></script>
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,400;0,600;1,400;1,600&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'sans': ['"Manrope"', 'sans-serif'],
+                        'serif': ['"Playfair Display"', 'serif'],
+                        'reading': ['"Cormorant Garamond"', 'serif'],
+                    },
+                    colors: {
+                        'bg': '#020617',       
+                        'surface': '#0f172a',  
+                        'border': 'rgba(130, 157, 241, 0.15)', 
+                        'muted': '#94a3b8',    
+                        'link': '#829DF1',     
+                    },
+                }
+            }
+        }
+    </script>
+
+    <style>
+        body { overflow-x: hidden; -webkit-font-smoothing: antialiased; }
+        html, body, a, button, input, textarea, .cursor-none { cursor: none !important; }
+        
+        /* Custom Cursor */
+        .custom-cursor {
+            position: fixed; top: 0; left: 0; width: 24px; height: 24px; z-index: 9999;
+            pointer-events: none; will-change: transform;
+        }
+
+        /* Animations */
+        .reveal { opacity: 0; transform: translateY(30px); transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1); }
+        .reveal.active { opacity: 1; transform: translateY(0); }
+
+        /* Hide Scrollbar */
+        .no-scrollbar::-webkit-scrollbar { display: none; }
+        .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+        
+        /* Shader */
+        .shader-bg {
+            position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: 0;
+            opacity: 0.4; pointer-events: none; mix-blend-mode: screen;
+        }
+        media-shader { display: block; width: 100%; height: 100%; }
+    </style>
+</head>
+<body class="bg-bg text-white selection:bg-[#829DF1] selection:text-black min-h-screen flex flex-col">
+
+    <!-- Background Grid -->
+    <div class="fixed inset-0 z-0 pointer-events-none flex justify-center h-full w-full opacity-20">
+        <div class="w-full max-w-[1400px] h-full grid grid-cols-6 md:grid-cols-12 gap-4 px-6 md:px-12">
+            <div class="border-r border-[#829DF1]/10 h-full border-dashed"></div><div class="border-r border-[#829DF1]/10 h-full border-dashed hidden md:block"></div>
+            <div class="border-r border-[#829DF1]/10 h-full border-dashed"></div><div class="border-r border-[#829DF1]/10 h-full border-dashed hidden md:block"></div>
+            <div class="border-r border-[#829DF1]/10 h-full border-dashed"></div><div class="border-r border-[#829DF1]/10 h-full border-dashed hidden md:block"></div>
+            <div class="border-r border-[#829DF1]/10 h-full border-dashed"></div><div class="border-r border-[#829DF1]/10 h-full border-dashed hidden md:block"></div>
+            <div class="border-r border-[#829DF1]/10 h-full border-dashed"></div><div class="border-r border-[#829DF1]/10 h-full border-dashed hidden md:block"></div>
+            <div class="border-r border-[#829DF1]/10 h-full border-dashed"></div><div class="border-r border-[#829DF1]/10 h-full border-dashed hidden md:block"></div>
+        </div>
+    </div>
+    
+    <!-- Cursor -->
+    <div class="custom-cursor hidden md:block">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M5.65376 12.3673H5.46026L5.31717 12.4976L0.500002 16.8829L0.500002 1.19841L11.7841 12.3673H5.65376Z" fill="#000000" stroke="#829DF1" stroke-width="1.5"/>
+        </svg>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="fixed top-6 left-0 w-full z-50 flex justify-center pointer-events-none">
+        <div class="reveal pointer-events-auto">
+            <div class="bg-[#0f172a]/60 backdrop-blur-xl border border-[#829DF1]/20 rounded-full px-6 py-2.5 flex items-center gap-10 shadow-2xl shadow-black/50">
+                <a href="index.html" aria-label="Home" class="hover-target w-6 h-6 text-white hover:text-[#829DF1] transition-colors">
+                    <img src="img/clients/logo.svg" alt="Logo" class="w-full h-full object-contain">
+                </a>
+                
+                <div class="flex gap-8 font-sans text-[11px] font-semibold text-muted uppercase tracking-widest items-center">
+                    <a href="index.html#works" class="hover:text-[#829DF1] transition-colors hover-target">Work</a>
+                    <a href="index.html#poems" class="text-[#829DF1] transition-colors hover-target">Thoughts</a>
+                    <a href="index.html#about" class="hover:text-[#829DF1] transition-colors hover-target">Me</a>
+                </div>
+
+                <a href="https://calendly.com/itsdurgeshray/ice-breaking-call" class="hidden md:block bg-white/5 hover:bg-white hover:text-black text-white border border-white/30 px-5 py-1.5 rounded-full text-[10px] font-bold uppercase tracking-wider transition-all hover-target">
+                    Let's Talk
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Shader Background -->
+    <div class="shader-bg">
+        <media-shader width="100%" height="100%" fragment-shader="#version 300 es
+        precision highp float;
+        out vec4 glFragColor;
+        uniform vec2 u_resolution;
+        uniform float u_time;
+        uniform vec4 u_colors[2];
+        uniform float u_intensity;
+        uniform float u_rays;
+        uniform float u_reach;
+        float rayStrength(vec2 raySource, vec2 rayRefDirection, vec2 coord, float seedA, float seedB, float speed){
+            vec2 sourceToCoord = coord - raySource;
+            float cosAngle = dot(normalize(sourceToCoord), rayRefDirection);
+            return clamp((.45 + 0.15 * sin(cosAngle * seedA + u_time * speed)) + (0.3 + 0.2 * cos(-cosAngle * seedB + u_time * speed)), u_reach, 1.0) * clamp((u_resolution.x - length(sourceToCoord)) / u_resolution.x, u_reach, 1.0);
+        }
+        void main(){
+            vec2 uv = gl_FragCoord.xy / u_resolution.xy;
+            uv.y = 1.0 - uv.y;
+            vec2 coord = vec2(gl_FragCoord.x, u_resolution.y - gl_FragCoord.y);
+            float speed = u_rays * 10.0;
+            vec2 rayPos1 = vec2(u_resolution.x * 0.7, u_resolution.y * -0.4);
+            vec2 rayRefDir1 = normalize(vec2(1.0, -0.116));
+            float raySeedA1 = 36.2214*speed; float raySeedB1 = 21.11349*speed; float raySpeed1 = 1.5*speed;
+            vec2 rayPos2 = vec2(u_resolution.x * 0.8, u_resolution.y * -0.6);
+            vec2 rayRefDir2 = normalize(vec2(1.0, 0.241));
+            float raySeedA2 = 22.39910*speed; float raySeedB2 = 18.0234*speed; float raySpeed2 = 1.1*speed;
+            vec4 rays1 = vec4(0.,0.,0., .0) + rayStrength(rayPos1, rayRefDir1, coord, raySeedA1, raySeedB1, raySpeed1) * u_colors[0];
+            vec4 rays2 = vec4(0.,0.,0., .0) + rayStrength(rayPos2, rayRefDir2, coord, raySeedA2, raySeedB2, raySpeed2) * u_colors[1];
+            vec4 fragColor = (rays1) + (rays2);
+            float brightness = 1.0*u_reach - (coord.y / u_resolution.y);
+            fragColor *= (brightness + (0.5+ u_intensity));
+            glFragColor = fragColor;
+        }" uniforms='{"u_colors":[[0.5098039215686274,0.615686274509804,0.9450980392156862,1],[0.6431372549019608,0.7215686274509804,0.9568627450980393,1]],"u_intensity":0.7,"u_rays":0.015,"u_reach":0.2}'>
+        </media-shader>
+    </div>
+
+    <!-- POEM CONTENT -->
+    <main class="flex-grow flex flex-col items-center relative z-10 pt-40 pb-32 px-6">
+        
+        <!-- Header Info -->
+        <div class="text-center mb-16 reveal">
+            <div class="inline-block mb-4 px-4 py-1 rounded-full border border-[#829DF1]/20 bg-[#0f172a]/50 backdrop-blur-md">
+                <span class="font-sans text-[10px] font-bold tracking-[0.2em] uppercase text-[#829DF1]">Poetry</span>
+            </div>
+            <h1 class="text-4xl md:text-6xl font-serif italic font-medium tracking-tight text-white drop-shadow-[0_0_30px_rgba(130,157,241,0.3)]">
+                Shattered Now, Crumbling Forever
+            </h1>
+            <p class="mt-4 text-muted font-sans text-sm uppercase tracking-widest opacity-60">Dec 2024 &bull; 1 min read</p>
+        </div>
+
+        <!-- Poem Poster Image -->
+        <div class="mb-16 reveal delay-100 max-w-md w-full">
+            <div class="aspect-[3/4] rounded-2xl overflow-hidden border border-white/10 shadow-2xl shadow-[#829DF1]/10">
+                <img src="img/poems/poem-02.webp" alt="Poem Illustration" class="w-full h-full object-cover hover:scale-105 transition-transform duration-700 ease-out">
+            </div>
+        </div>
+
+        <!-- The Poem -->
+        <article class="max-w-4xl w-full text-center reveal delay-200 overflow-x-auto no-scrollbar">
+            <div class="font-reading text-xl md:text-3xl leading-[1.5] text-slate-500 font-light tracking-wide whitespace-nowrap inline-block min-w-min px-4">
+                
+                <p class="mb-10 hover:text-white transition-colors duration-700 ease-out cursor-default">
+                    Calmly you said this was my last T20 world cup<br>
+                    Only to make my lungs scream shut the fuck up<br>
+                    Looting all my admiration for years but angst now<br>
+                    Then you also fulfilled those unsaid promises & vows.
+                </p>
+
+                <p class="mb-10 hover:text-white transition-colors duration-700 ease-out cursor-default">
+                    Always an alpha to stay rigid against the outside noise<br>
+                    Isn’t the story same for my begging and crying voice<br>
+                    Wait can I bribe you with chole bhature from ram<br>
+                    Nah my king you got other two formats to slam.
+                </p>
+
+                <p class="mb-10 hover:text-white transition-colors duration-700 ease-out cursor-default">
+                    You told us to be prepared mentally for anything<br>
+                    But you are my childhood love and not just a fling<br>
+                    Mark open legged stance down at 3 to tackle pace<br>
+                    Stay longer my wrong footed inswinging menace.
+                </p>
+
+                <p class="hover:text-white transition-colors duration-700 ease-out cursor-default">
+                    After decade long spree I feel horror but not thrill<br>
+                    As like the first rest two wicket might fall as well<br>
+                    Thanks for returning back my long-lost fear<br>
+                    And leaving me shattered now & crumbling forever.
+                </p>
+            </div>
+        </article>
+
+        <!-- Pagination (Next/Prev) -->
+        <div class="mt-32 w-full max-w-4xl border-t border-white/10 pt-12 flex justify-between items-center reveal delay-300">
+            
+            <!-- PREVIOUS: Venus Personified -->
+            <a href="venus-personified.html" class="flex items-center gap-4 group hover-target text-left">
+                <!-- Icon on Left -->
+                <div class="w-12 h-12 rounded-full border border-white/10 flex items-center justify-center text-muted group-hover:border-[#829DF1] group-hover:text-[#829DF1] transition-all shrink-0">
+                    <i class="fas fa-arrow-left"></i>
+                </div>
+                <!-- Text on Right -->
+                <div class="hidden md:block">
+                    <span class="block text-[10px] uppercase tracking-widest text-muted mb-1 group-hover:text-[#829DF1] transition-colors">Previous Poem</span>
+                    <span class="block font-serif italic text-lg text-white">Venus Personified</span>
+                </div>
+            </a>
+
+            <!-- NEXT: Disabled (Coming Soon) -->
+            <a href="#" class="pointer-events-none opacity-30 flex items-center gap-4 group text-right">
+                <!-- Text on Left -->
+                <div class="hidden md:block">
+                    <span class="block text-[10px] uppercase tracking-widest text-muted mb-1">Next Poem</span>
+                    <span class="block font-serif italic text-lg text-white">Coming Soon</span>
+                </div>
+                <!-- Icon on Right -->
+                <div class="w-12 h-12 rounded-full border border-white/10 flex items-center justify-center text-muted shrink-0">
+                    <i class="fas fa-arrow-right"></i>
+                </div>
+            </a>
+
+        </div>
+
+    </main>
+
+    <!-- Footer -->
+    <footer id="contact" class="py-32 px-6 md:px-12 bg-bg text-center relative z-10 border-t border-border overflow-hidden">
+        <!-- Footer Glow -->
+        <div class="absolute bottom-0 left-1/2 -translate-x-1/2 w-[800px] h-[500px] bg-[#829DF1]/5 rounded-full blur-[150px] pointer-events-none"></div>
+
+        <div class="max-w-[1400px] mx-auto relative z-10">
+            
+            <!-- 1. Giant CTA -->
+            <h2 class="text-6xl md:text-9xl font-serif italic font-medium tracking-tight mb-16 text-white reveal">
+                Let's break the ice.
+            </h2>
+            
+            <!-- 2. Magnetic Action -->
+            <div class="flex justify-center mb-24 reveal delay-100">
+                <a href="https://calendly.com/itsdurgeshray/ice-breaking-call/" class="group relative w-48 h-48 md:w-64 md:h-64 rounded-full border border-[#829DF1]/30 flex items-center justify-center hover:bg-[#829DF1] hover:border-[#829DF1] transition-all duration-500 hover-target hover:scale-110">
+                     <div class="absolute inset-0 rounded-full bg-[#829DF1]/10 scale-0 group-hover:scale-150 transition-transform duration-700 ease-out"></div>
+                     <div class="flex flex-col items-center gap-2 relative z-10">
+                        <span class="text-sm font-sans font-bold uppercase tracking-widest text-[#829DF1] group-hover:text-[#020617]">Start Project</span>
+                        <i class="fas fa-arrow-right -rotate-45 text-2xl text-[#829DF1] group-hover:text-[#020617] transition-transform group-hover:rotate-0"></i>
+                     </div>
+                </a>
+            </div>
+
+            <!-- 3. Email & Socials Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 border-t border-white/10 pt-12 reveal delay-200 text-left md:text-center">
+                
+                <div class="flex flex-col gap-2 md:items-start">
+                    <span class="text-xs font-sans text-muted uppercase tracking-widest">Contact</span>
+                    <a href="mailto:iamdurgeshkumarofficial@gmail.com" class="text-lg font-sans font-medium text-white hover:text-[#829DF1] transition-colors hover-target">hello@durgesh.ray</a>
+                </div>
+
+                <div class="flex flex-col gap-2 md:items-center">
+                    <span class="text-xs font-sans text-muted uppercase tracking-widest">Socials</span>
+                    <div class="flex gap-6 justify-center">
+                         <a href="https://www.x.com/itsdurgeshray/" target="_blank" class="text-white hover:text-[#829DF1] transition-colors hover-target"><i class="fab fa-twitter text-xl"></i></a>
+                         <a href="https://www.dribbble.com/itsdurgeshray/" target="_blank" class="text-white hover:text-[#829DF1] transition-colors hover-target"><i class="fab fa-dribbble text-xl"></i></a>
+                         <a href="https://www.medium.com/@itsdurgeshray/" target="_blank" class="text-white hover:text-[#829DF1] transition-colors hover-target"><i class="fab fa-medium text-xl"></i></a>
+                    </div>
+                </div>
+
+                <div class="flex flex-col gap-2 md:items-end">
+                    <span class="text-xs font-sans text-muted uppercase tracking-widest">Location</span>
+                    <span class="text-lg font-sans font-medium text-white">India <span id="time" class="text-muted text-sm ml-2"></span></span>
+                </div>
+            </div>
+
+            <!-- 4. Bottom Copyright -->
+            <div class="mt-12 text-[10px] font-sans font-bold text-muted/50 uppercase tracking-widest reveal delay-300">
+                © 2025 Durgesh Ray. All Rights Reserved.
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Cursor
+        const cursor = document.querySelector('.custom-cursor');
+        document.addEventListener('mousemove', (e) => {
+            cursor.style.transform = `translate3d(${e.clientX}px, ${e.clientY}px, 0)`;
+        });
+
+        // Time
+        function updateTime() {
+            const now = new Date();
+            document.getElementById('time').textContent = now.toLocaleTimeString('en-US', {hour: '2-digit', minute: '2-digit', timeZone: 'Asia/Kolkata'}) + ' IST';
+        }
+        setInterval(updateTime, 1000);
+        updateTime();
+
+        // Observer
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if(entry.isIntersecting) entry.target.classList.add('active');
+            });
+        }, { threshold: 0.1 });
+        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+    </script>
+</body>
+</html>
