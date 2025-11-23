@@ -1,0 +1,632 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth bg-[#020617] text-[#e2e8f0]">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- SEO -->
+    <title>Booking.com Case Study | Durgesh Ray</title>
+    <meta name="description" content="Eliminating the Choice Paradox to facilitate decision making.">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Media Shader -->
+    <script src="https://unpkg.com/media-shader@latest/media-shader.js"></script>
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,400;0,600;1,400;1,600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'sans': ['"Manrope"', 'sans-serif'],
+                        'serif': ['"Playfair Display"', 'serif'],
+                    },
+                    colors: {
+                        'bg': '#020617',       
+                        'surface': '#0f172a',  
+                        'border': 'rgba(130, 157, 241, 0.15)', 
+                        'muted': '#94a3b8',    
+                        'link': '#829DF1',     
+                    },
+                }
+            }
+        }
+    </script>
+
+    <style>
+        body { overflow-x: hidden; -webkit-font-smoothing: antialiased; }
+        html, body, a, button, input, textarea, .cursor-none { cursor: none !important; }
+        
+        /* Custom Cursor */
+        .custom-cursor {
+            position: fixed; top: 0; left: 0; width: 24px; height: 24px; z-index: 9999;
+            pointer-events: none; will-change: transform;
+        }
+
+        /* Animations */
+        .reveal { opacity: 0; transform: translateY(30px); transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1); }
+        .reveal.active { opacity: 1; transform: translateY(0); }
+
+        /* Scrollbars */
+        .no-scrollbar::-webkit-scrollbar { display: none; }
+        .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+        
+        /* Shader */
+        .shader-bg {
+            position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: 0;
+            opacity: 0.4; pointer-events: none; mix-blend-mode: screen;
+        }
+        media-shader { display: block; width: 100%; height: 100%; }
+
+        /* Components */
+        .toc-link.active { color: #829DF1; border-left-color: #829DF1; padding-left: 1.5rem; }
+        .toc-link { transition: all 0.3s ease; }
+
+        /* Base Image Styling */
+        img {
+            display: block;
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+        }
+    </style>
+</head>
+<body class="bg-bg text-white selection:bg-[#829DF1] selection:text-black min-h-screen flex flex-col">
+
+    <!-- Background Grid -->
+    <div class="fixed inset-0 z-0 pointer-events-none flex justify-center h-full w-full opacity-20">
+        <div class="w-full max-w-[1200px] h-full grid grid-cols-6 md:grid-cols-12 gap-4 px-6 md:px-12">
+            <div class="border-r border-[#829DF1]/10 h-full border-dashed"></div><div class="border-r border-[#829DF1]/10 h-full border-dashed hidden md:block"></div>
+            <div class="border-r border-[#829DF1]/10 h-full border-dashed"></div><div class="border-r border-[#829DF1]/10 h-full border-dashed hidden md:block"></div>
+            <div class="border-r border-[#829DF1]/10 h-full border-dashed"></div><div class="border-r border-[#829DF1]/10 h-full border-dashed hidden md:block"></div>
+            <div class="border-r border-[#829DF1]/10 h-full border-dashed"></div><div class="border-r border-[#829DF1]/10 h-full border-dashed hidden md:block"></div>
+            <div class="border-r border-[#829DF1]/10 h-full border-dashed"></div><div class="border-r border-[#829DF1]/10 h-full border-dashed hidden md:block"></div>
+            <div class="border-r border-[#829DF1]/10 h-full border-dashed"></div><div class="border-r border-[#829DF1]/10 h-full border-dashed hidden md:block"></div>
+        </div>
+    </div>
+    
+    <!-- Cursor -->
+    <div class="custom-cursor hidden md:block">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M5.65376 12.3673H5.46026L5.31717 12.4976L0.500002 16.8829L0.500002 1.19841L11.7841 12.3673H5.65376Z" fill="#000000" stroke="#829DF1" stroke-width="1.5"/>
+        </svg>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="fixed top-6 left-0 w-full z-50 flex justify-center pointer-events-none">
+        <div class="reveal pointer-events-auto">
+            <div class="bg-[#0f172a]/60 backdrop-blur-xl border border-[#829DF1]/20 rounded-full px-6 py-2.5 flex items-center gap-10 shadow-2xl shadow-black/50">
+                <a href="#" aria-label="Home" class="hover-target w-6 h-6 text-white hover:text-[#829DF1] transition-colors">
+                    <img src="img/brand-assets/logo.webp" alt="Durgesh Ray Logo" class="w-full h-full object-contain">
+                </a>
+                
+                <div class="flex gap-8 font-sans text-[11px] font-semibold text-muted uppercase tracking-widest items-center">
+                    <a href="#works" class="hover:text-[#829DF1] transition-colors hover-target">Works</a>
+                    <a href="#poems" class="hover:text-[#829DF1] transition-colors hover-target">Musings</a>
+                    <a href="#me" class="hover:text-[#829DF1] transition-colors hover-target">Me</a>
+                </div>
+
+                <a href="https://calendly.com/itsdurgeshray/ice-breaking-call" class="hidden md:block bg-white/5 hover:bg-white hover:text-black text-white border border-white/30 px-5 py-1.5 rounded-full text-[10px] font-bold uppercase tracking-wider transition-all hover-target">
+                    Let's Talk
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Shader Background -->
+    <div class="shader-bg">
+        <media-shader width="100%" height="100%" fragment-shader="#version 300 es
+        precision highp float; out vec4 glFragColor; uniform vec2 u_resolution; uniform float u_time; uniform vec4 u_colors[2]; uniform float u_intensity; uniform float u_rays; uniform float u_reach;
+        float rayStrength(vec2 raySource, vec2 rayRefDirection, vec2 coord, float seedA, float seedB, float speed){
+            vec2 sourceToCoord = coord - raySource; float cosAngle = dot(normalize(sourceToCoord), rayRefDirection);
+            return clamp((.45 + 0.15 * sin(cosAngle * seedA + u_time * speed)) + (0.3 + 0.2 * cos(-cosAngle * seedB + u_time * speed)), u_reach, 1.0) * clamp((u_resolution.x - length(sourceToCoord)) / u_resolution.x, u_reach, 1.0);
+        }
+        void main(){
+            vec2 uv = gl_FragCoord.xy / u_resolution.xy; uv.y = 1.0 - uv.y; vec2 coord = vec2(gl_FragCoord.x, u_resolution.y - gl_FragCoord.y); float speed = u_rays * 10.0;
+            vec2 rayPos1 = vec2(u_resolution.x * 0.7, u_resolution.y * -0.4); vec2 rayRefDir1 = normalize(vec2(1.0, -0.116));
+            vec2 rayPos2 = vec2(u_resolution.x * 0.8, u_resolution.y * -0.6); vec2 rayRefDir2 = normalize(vec2(1.0, 0.241));
+            vec4 rays1 = vec4(0.,0.,0., .0) + rayStrength(rayPos1, rayRefDir1, coord, 36.22*speed, 21.11*speed, 1.5*speed) * u_colors[0];
+            vec4 rays2 = vec4(0.,0.,0., .0) + rayStrength(rayPos2, rayRefDir2, coord, 22.39*speed, 18.02*speed, 1.1*speed) * u_colors[1];
+            glFragColor = (rays1 + rays2) * (1.0*u_reach - (coord.y / u_resolution.y) + (0.5+ u_intensity));
+        }" uniforms='{"u_colors":[[0.5098039215686274,0.615686274509804,0.9450980392156862,1],[0.6431372549019608,0.7215686274509804,0.9568627450980393,1]],"u_intensity":0.7,"u_rays":0.015,"u_reach":0.2}'>
+        </media-shader>
+    </div>
+
+    <!-- MASTER WRAPPER -->
+    <div class="w-full max-w-[1200px] mx-auto px-6 md:px-12">
+
+        <!-- HERO -->
+        <header class="pt-28 md:pt-40 pb-12 md:pb-20 relative z-10 text-center w-full">
+            <div class="reveal">
+                <div class="flex flex-wrap justify-center gap-4 mb-8 text-xs font-sans font-bold uppercase tracking-widest text-[#829DF1]">
+                    <span class="border border-[#829DF1]/30 px-3 py-1 rounded-full">Booking.com</span>
+                    <span class="border border-[#829DF1]/30 px-3 py-1 rounded-full">UX Research</span>
+                    <span class="border border-[#829DF1]/30 px-3 py-1 rounded-full">Decision Making</span>
+                </div>
+                <h1 class="text-5xl md:text-8xl font-serif italic font-medium text-white mb-8 drop-shadow-lg leading-[1.1]">
+                    Drawing Conversion<br>from Clarity
+                </h1>
+                <p class="text-muted text-lg max-w-2xl mx-auto font-sans font-light mb-12">
+                Increasing <strong class="text-white">Booking Conversion Rate</strong> by curing decision paralysis through data-driven recommendations.
+                </p>
+
+                <!-- HERO IMAGE: Full Width of Container (Cinematic) -->
+                <div class="rounded-2xl border border-white/10 overflow-hidden shadow-2xl">
+                    <img src="img/case study/bookingcom_case_study.webp" alt="Case Study Hero Image" class="w-full h-auto">
+                </div>
+            </div>
+        </header>
+
+        <!-- SECTION 1: CONTEXT CARDS -->
+        <div class="w-full mb-20 md:mb-32 relative z-10 reveal">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div class="p-8 rounded-2xl bg-[#0f172a] border border-white/10 flex flex-col items-start justify-center text-left hover:border-[#829DF1]/30 transition-colors duration-300 shadow-2xl">
+                    <span class="text-xs font-sans font-bold text-[#829DF1] uppercase tracking-widest mb-4">The Problem</span>
+                    <h3 class="text-2xl font-serif text-white mb-3">Decision Paralysis</h3>
+                    <p class="text-muted text-sm leading-relaxed">Users feel overwhelmed by 500+ options, leading to high drop-off rates and low conversion.</p>
+                </div>
+                <div class="p-8 rounded-2xl bg-[#0f172a] border border-white/10 flex flex-col items-start justify-center text-left hover:border-[#829DF1]/30 transition-colors duration-300 shadow-2xl">
+                    <span class="text-xs font-sans font-bold text-[#829DF1] uppercase tracking-widest mb-4">Targeted Metric</span>
+                    <h3 class="text-2xl font-serif text-white mb-3">Booking Conversion</h3>
+                    <p class="text-muted text-sm leading-relaxed">Primary success indicator. Supported by reduced Time-to-Book and Session Drop-offs.</p>
+                </div>
+                <div class="p-8 rounded-2xl bg-[#0f172a] border border-white/10 flex flex-col items-start justify-center text-left hover:border-[#829DF1]/30 transition-colors duration-300 shadow-2xl">
+                    <span class="text-xs font-sans font-bold text-[#829DF1] uppercase tracking-widest mb-4">Constraint</span>
+                    <h3 class="text-2xl font-serif text-white mb-3">48-Hour Sprint</h3>
+                    <p class="text-muted text-sm leading-relaxed">A focused design challenge to ideate, prototype, and validate a feature in 2 days.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- MAIN LAYOUT GRID -->
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 pb-32 relative z-10">
+            
+            <!-- STICKY TOC -->
+            <aside class="lg:col-span-3 hidden lg:block relative">
+                <div class="sticky top-32 border-l border-white/10 pl-6 space-y-4">
+                    <span class="text-xs font-sans font-bold text-white uppercase tracking-widest mb-4 block opacity-50">Index</span>
+                    <nav class="flex flex-col gap-4" id="toc-nav">
+                        <a href="#context" class="toc-link text-sm text-muted hover:text-white border-l-2 border-transparent pl-3 -ml-[27px]">1. Context</a>
+                        <a href="#research" class="toc-link text-sm text-muted hover:text-white border-l-2 border-transparent pl-3 -ml-[27px]">2. Research</a>
+                        <a href="#hypothesis" class="toc-link text-sm text-muted hover:text-white border-l-2 border-transparent pl-3 -ml-[27px]">3. Hypothesis</a>
+                        <a href="#ideation" class="toc-link text-sm text-muted hover:text-white border-l-2 border-transparent pl-3 -ml-[27px]">4. Ideation</a>
+                        <a href="#scope" class="toc-link text-sm text-muted hover:text-white border-l-2 border-transparent pl-3 -ml-[27px]">5. Implementation Scope</a>
+                        <a href="#validation" class="toc-link text-sm text-muted hover:text-white border-l-2 border-transparent pl-3 -ml-[27px]">6. Validating Idea</a>
+                        <a href="#iterations" class="toc-link text-sm text-muted hover:text-white border-l-2 border-transparent pl-3 -ml-[27px]">7. Shortcomings & Iteration</a>
+                    </nav>
+                </div>
+            </aside>
+
+            <!-- CONTENT AREA -->
+            <article class="lg:col-span-9 font-sans text-lg leading-relaxed text-slate-300 space-y-20 md:space-y-32">
+                
+                <!-- 1. CONTEXT -->
+                <section id="context" class="reveal">
+                    <h2 class="text-3xl md:text-4xl font-serif italic text-white mb-8">1. Context</h2>
+                    <p class="mb-8">
+                        Booking.com has arguably the largest inventory in the world. But in 2023, this strength became a weakness. Users were spending hours filtering through 500+ options, often leaving without booking due to <strong>decision fatigue</strong>.
+                    </p>
+
+                    <div class="bg-[#0f172a] border-l-4 border-[#829DF1] p-6 rounded-r-xl my-8">
+                        <p class="text-white italic text-xl">The goal was clear: Stop users from "Searching" and start helping them "Choose."</p>
+                    </div>
+                </section>
+
+                <!-- 2. DIGGING INSIGHTS -->
+                <section id="research" class="reveal">
+                    <h2 class="text-3xl md:text-4xl font-serif italic text-white mb-8">2. Digging Insights</h2>
+                    <p class="mb-12">
+                        During secondary research, we analyzed traffic patterns. The data showed a clear distinction between "Focused" and "Indecisive" behaviors when comparing with competitors.
+                    </p>
+                    
+                    <!-- IMAGE FIX: Removed inner padding (p-4) to make image flush with border -->
+                    <div class="mb-12 bg-surface/30 rounded-xl border border-border overflow-hidden">
+                        <img src="img/booking-com_case_study/engagement-analysis.webp" alt="Chart: Traffic Patterns & Bounce Rates Analysis" class="w-full h-auto">
+                    </div>
+
+                    <!-- Data Synthesis Cards -->
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <!-- MakeMyTrip -->
+                        <div class="relative group overflow-hidden rounded-2xl border border-white/10 bg-[#0f172a] p-8 transition-all duration-500 hover:border-green-500/30">
+                            <div class="relative z-10">
+                                <div class="mb-4 flex items-center justify-between">
+                                    <h4 class="font-serif text-xl text-white">MakeMyTrip</h4>
+                                    <span class="rounded-full border border-green-500/30 bg-green-500/10 px-3 py-1 text-[10px] font-bold uppercase tracking-widest text-green-400">Focused</span>
+                                </div>
+                                <p class="text-sm leading-relaxed text-muted">
+                                    Users visit fewer pages but spend quality time reading details. This indicates <strong>efficient decision making</strong>.
+                                </p>
+                            </div>
+                        </div>
+                        <!-- Booking.com -->
+                        <div class="relative group overflow-hidden rounded-2xl border border-white/10 bg-[#0f172a] p-8 transition-all duration-500 hover:border-red-500/30">
+                            <div class="relative z-10">
+                                <div class="mb-4 flex items-center justify-between">
+                                    <h4 class="font-serif text-xl text-white">Booking.com</h4>
+                                    <span class="rounded-full border border-red-500/30 bg-red-500/10 px-3 py-1 text-[10px] font-bold uppercase tracking-widest text-red-400">Indecisive</span>
+                                </div>
+                                <p class="text-sm leading-relaxed text-muted">
+                                    Users visit significantly more pages with high bounce rates. This signals <strong>choice paralysis</strong>.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <p class="mt-12 text-sm text-muted border-t border-white/10 pt-6">
+                        This data validated <strong>Hick's Law</strong>: The time it takes to make a decision increases with the number and complexity of choices.
+                    </p>
+                </section>
+
+                <!-- 3. HYPOTHESIS -->
+                <section id="hypothesis" class="reveal">
+                    <h2 class="text-3xl md:text-4xl font-serif italic text-white mb-8">3. Hypothesis</h2>
+                    <p class="mb-8">
+                        After thoroughly conducting secondary research and gathering a significant amount of information, I felt that I had a comprehensive understanding of the context and was ready to move on to the next step in my research process — formulating a hypothesis.
+                    </p>
+                    <div class="space-y-4">
+                        <div class="bg-surface border border-border p-6 rounded-xl flex gap-4 items-start hover:border-[#829DF1]/40 transition-colors">
+                            <span class="text-[#829DF1] font-bold text-xl">1.</span>
+                            <p class="text-sm text-muted">Personalised recommendations will lead to <strong>increased engagement</strong> with the product or service.</p>
+                        </div>
+                        <div class="bg-surface border border-border p-6 rounded-xl flex gap-4 items-start hover:border-[#829DF1]/40 transition-colors">
+                            <span class="text-[#829DF1] font-bold text-xl">2.</span>
+                            <p class="text-sm text-muted">Recommendations based on user data will result in <strong>higher conversion rates</strong> compared to generic lists.</p>
+                        </div>
+                        <div class="bg-surface border border-border p-6 rounded-xl flex gap-4 items-start hover:border-[#829DF1]/40 transition-colors">
+                            <span class="text-[#829DF1] font-bold text-xl">3.</span>
+                            <p class="text-sm text-muted">Users will have a <strong>more positive experience</strong> with a product or service when they receive tailored recommendations.</p>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- 4. IDEATION -->
+                <section id="ideation" class="reveal">
+                    <h2 class="text-3xl md:text-4xl font-serif italic text-white mb-4">4. Ideation</h2>
+                    <p class="text-muted mb-8 leading-relaxed">
+                        Brainstorming focused on integrating "Smart Choices" without disrupting the existing user flow. We explored how subtle nudges could appear at critical drop-off points like the search results and property details page. Swipe to see the concepts.
+                    </p>
+
+                    <!-- Horizontal Scroll Snap Carousel -->
+                    <div id="ideation-slider" class="overflow-x-auto flex gap-6 snap-x snap-mandatory pb-8 no-scrollbar cursor-grab active:cursor-grabbing">
+                        
+                        <!-- Slide 1: Home -->
+                        <div class="snap-center shrink-0 w-[85vw] md:w-[600px] flex flex-col gap-4 pointer-events-none select-none">
+                            <!-- IMAGE FIX: Added container with overflow-hidden and border to ensure flush fit -->
+                            <div class="rounded-xl border border-border shadow-xl overflow-hidden">
+                                <img src="IMAGE LINK HERE" alt="UI Mockup: Home Page" class="w-full h-auto">
+                            </div>
+                            <div class="w-full p-6 border border-border rounded-xl bg-surface/50 flex-grow">
+                                <h3 class="text-xl text-white font-serif mb-2">Home Page</h3>
+                                <p class="text-sm text-muted">The homepage would consist of a very visible section labelled as <strong>“Pick For You”</strong> to help the user with decision-making upon arrival.</p>
+                            </div>
+                        </div>
+
+                        <!-- Slide 2: SERP -->
+                        <div class="snap-center shrink-0 w-[85vw] md:w-[600px] flex flex-col gap-4 pointer-events-none select-none">
+                            <div class="rounded-xl border border-border shadow-xl overflow-hidden">
+                                <img src="IMAGE LINK HERE" alt="UI Mockup: SERP" class="w-full h-auto">
+                            </div>
+                            <div class="w-full p-6 border border-border rounded-xl bg-surface/50 flex-grow">
+                                <h3 class="text-xl text-white font-serif mb-2">Search Result Page</h3>
+                                <p class="text-sm text-muted">Cards will consist of a label over the image signifying that the stay is recommended, in a subtle way to avoid visual clutter.</p>
+                            </div>
+                        </div>
+
+                        <!-- Slide 3: Map -->
+                        <div class="snap-center shrink-0 w-[85vw] md:w-[600px] flex flex-col gap-4 pointer-events-none select-none">
+                            <div class="rounded-xl border border-border shadow-xl overflow-hidden">
+                                <img src="IMAGE LINK HERE" alt="UI Mockup: Map View" class="w-full h-auto">
+                            </div>
+                            <div class="w-full p-6 border border-border rounded-xl bg-surface/50 flex-grow">
+                                <h3 class="text-xl text-white font-serif mb-2">Map View</h3>
+                                <p class="text-sm text-muted">A specialised location pin icon would signify recommended locations. Clicking it opens a pop-tray with booking info.</p>
+                            </div>
+                        </div>
+
+                        <!-- Slide 4: Overview -->
+                        <div class="snap-center shrink-0 w-[85vw] md:w-[600px] flex flex-col gap-4 pointer-events-none select-none">
+                            <div class="rounded-xl border border-border shadow-xl overflow-hidden">
+                                <img src="IMAGE LINK HERE" alt="UI Mockup: Property Page" class="w-full h-auto">
+                            </div>
+                            <div class="w-full p-6 border border-border rounded-xl bg-surface/50 flex-grow">
+                                <h3 class="text-xl text-white font-serif mb-2">Property Overview</h3>
+                                <p class="text-sm text-muted">If the user isn't satisfied, a section of recommended options appears at the end as a <strong>nudge</strong> to prevent drop-offs.</p>
+                            </div>
+                        </div>
+
+                        <!-- Slide 5: Quiz -->
+                        <div class="snap-center shrink-0 w-[85vw] md:w-[600px] flex flex-col gap-4 pointer-events-none select-none">
+                            <div class="rounded-xl border border-[#829DF1]/30 shadow-xl overflow-hidden">
+                                <img src="IMAGE LINK HERE" alt="UI Mockup: Quiz Edge Case" class="w-full h-auto">
+                            </div>
+                            <div class="w-full p-6 border border-[#829DF1]/30 rounded-xl bg-[#829DF1]/5 flex-grow">
+                                <h3 class="text-xl text-white font-serif mb-2">The Quiz Edge Case</h3>
+                                <p class="text-sm text-muted">For new users, a low-effort <strong>5-question “this or that” quiz</strong> helps capture preferences, incentivized by a 10% discount.</p>
+                            </div>
+                        </div>
+
+                    </div>
+                </section>
+
+                <!-- 5. IMPLEMENTATION SCOPE -->
+                <section id="scope" class="reveal">
+                    <h2 class="text-3xl md:text-4xl font-serif italic text-white mb-8">5. Implementation Scope</h2>
+                    <p class="mb-8">
+                        Given the 48-hour constraint, we had to prioritize ruthlessly. We focused on high-traffic entry points where users experience the most friction. We decided to implement the recommendation engine across these three key surface areas.
+                    </p>
+                    
+                    <!-- SCOPE THUMBNAILS: Full bleed with overflow hidden -->
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8">
+                        <div class="rounded-xl overflow-hidden bg-surface border border-white/10">
+                            <img src="IMAGE LINK HERE" alt="Home Screen" class="w-full h-auto block">
+                        </div>
+                        <div class="rounded-xl overflow-hidden bg-surface border border-white/10">
+                            <img src="IMAGE LINK HERE" alt="SERP" class="w-full h-auto block">
+                        </div>
+                        <div class="rounded-xl overflow-hidden bg-surface border border-white/10">
+                            <img src="IMAGE LINK HERE" alt="Stay Overview" class="w-full h-auto block">
+                        </div>
+                    </div>
+
+                    <div class="p-8 border border-white/10 rounded-xl bg-[#0f172a]">
+                        <ul class="space-y-3 text-slate-300">
+                            <li class="flex items-center gap-3"><i class="fas fa-check-circle text-[#829DF1]"></i> Home Screen Implementation</li>
+                            <li class="flex items-center gap-3"><i class="fas fa-check-circle text-[#829DF1]"></i> SERP (Search Engine Result Page) Integration</li>
+                            <li class="flex items-center gap-3"><i class="fas fa-check-circle text-[#829DF1]"></i> Stay Overview Page Recommendations</li>
+                        </ul>
+                    </div>
+                </section>
+
+                <!-- 6. VALIDATING IDEA -->
+                <section id="validation" class="reveal">
+                    <h2 class="text-3xl md:text-4xl font-serif italic text-white mb-8">6. Validating Idea</h2>
+                    <p class="mb-8">
+                        We didn't just stop at designing; we put our prototypes in front of 5 users to see if the "choice overload" was actually reduced. The heatmaps and click-tracking revealed fascinating insights about user intent.
+                    </p>
+                    
+                    <!-- Usability Test Visual -->
+                    <div class="mb-8 rounded-xl border border-border overflow-hidden">
+                        <img src="img/booking-com_case_study/usability-testing.webp" alt="Usability Testing Findings Map" class="w-full h-auto block">
+                    </div>
+
+                    <div class="border border-white/10 rounded-2xl bg-[#0f172a] p-8">
+                        <h3 class="text-[#829DF1] font-bold uppercase tracking-widest text-sm mb-6">Goals of Usability Testing</h3>
+                        <ul class="space-y-6 text-slate-300">
+                            <li class="flex items-start gap-4">
+                                <span class="bg-white/10 w-6 h-6 rounded-full flex items-center justify-center text-xs shrink-0 mt-1">1</span>
+                                <p class="text-sm">The user’s understanding of the recommendation section on the homepage.</p>
+                            </li>
+                            <li class="flex items-start gap-4">
+                                <span class="bg-white/10 w-6 h-6 rounded-full flex items-center justify-center text-xs shrink-0 mt-1">2</span>
+                                <p class="text-sm">If they can grasp the distinction between suggested options and general listings.</p>
+                            </li>
+                            <li class="flex items-start gap-4">
+                                <span class="bg-white/10 w-6 h-6 rounded-full flex items-center justify-center text-xs shrink-0 mt-1">3</span>
+                                <p class="text-sm">Scrolling and decision-making behaviour on the property overview page.</p>
+                            </li>
+                        </ul>
+                    </div>
+                </section>
+
+                <!-- 7. SHORTCOMINGS & ITERATION -->
+                <section id="iterations" class="reveal">
+                    <h2 class="text-3xl md:text-4xl font-serif italic text-white mb-8">7. Shortcomings & Iteration</h2>
+                    <p class="mb-12">
+                        First drafts are rarely perfect. Our testing highlighted two major UI flaws that were hindering the very clarity we sought to provide. Here is how we fixed them.
+                    </p>
+                    
+                    <div class="space-y-16">
+                        
+                        <!-- Issue 1 -->
+                        <div>
+                            <h3 class="text-xl font-sans font-medium text-white/90 mb-6">The "Banner Blindness" Issue</h3>
+                            
+                            <!-- Comparison Visual -->
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
+                                <div class="rounded-xl border-2 border-red-500/20 overflow-hidden relative group">
+                                    <div class="absolute top-2 left-2 bg-red-500/20 text-red-300 text-[10px] px-2 py-0.5 rounded font-bold uppercase z-10">Before</div>
+                                    <img src="IMAGE LINK HERE" alt="Before: Banner (Ignored)" class="w-full h-auto block">
+                                </div>
+                                <div class="rounded-xl border-2 border-green-500/20 overflow-hidden relative group">
+                                    <div class="absolute top-2 left-2 bg-green-500/20 text-green-300 text-[10px] px-2 py-0.5 rounded font-bold uppercase z-10">After</div>
+                                    <img src="IMAGE LINK HERE" alt="After: Glow Chip" class="w-full h-auto block">
+                                </div>
+                            </div>
+
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                <div class="p-6 rounded-xl bg-surface border border-white/10">
+                                    <span class="text-red-400 font-bold uppercase text-xs tracking-widest block mb-2">Problem</span>
+                                    <p class="text-sm text-slate-300">In V1, we used a banner on top of the image to say "Recommended." Users completely ignored it, thinking it was an ad.</p>
+                                </div>
+                                <div class="p-6 rounded-xl bg-surface border border-white/10">
+                                    <span class="text-green-400 font-bold uppercase text-xs tracking-widest block mb-2">The Fix</span>
+                                    <p class="text-sm text-slate-300">We changed it to a high-contrast "Chip" inside the content area and added a subtle glow effect. Visibility improved immediately.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Issue 2 -->
+                        <div>
+                            <h3 class="text-xl font-sans font-medium text-white/90 mb-6">The "Scroll Fatigue" Issue</h3>
+
+                            <!-- Comparison Visual -->
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
+                                <div class="rounded-xl border-2 border-red-500/20 overflow-hidden relative group">
+                                    <div class="absolute top-2 left-2 bg-red-500/20 text-red-300 text-[10px] px-2 py-0.5 rounded font-bold uppercase z-10">Before</div>
+                                    <img src="IMAGE LINK HERE" alt="Before: Bottom Placement" class="w-full h-auto block">
+                                </div>
+                                <div class="rounded-xl border-2 border-green-500/20 overflow-hidden relative group">
+                                    <div class="absolute top-2 left-2 bg-green-500/20 text-green-300 text-[10px] px-2 py-0.5 rounded font-bold uppercase z-10">After</div>
+                                    <img src="IMAGE LINK HERE" alt="After: Top Placement" class="w-full h-auto block">
+                                </div>
+                            </div>
+
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                <div class="p-6 rounded-xl bg-surface border border-white/10">
+                                    <span class="text-red-400 font-bold uppercase text-xs tracking-widest block mb-2">Problem</span>
+                                    <p class="text-sm text-slate-300">On the Property Overview page, we placed recommendations at the very bottom. Heatmaps showed 0% of users reached that far.</p>
+                                </div>
+                                <div class="p-6 rounded-xl bg-surface border border-white/10">
+                                    <span class="text-green-400 font-bold uppercase text-xs tracking-widest block mb-2">The Fix</span>
+                                    <p class="text-sm text-slate-300">We moved the recommendation section <strong>UP</strong>, placing it immediately after the facility listing. This catches the user *before* they abandon the page.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </section>
+
+                <!-- CONCLUSION -->
+                <section class="reveal mt-24">
+                    <div class="border border-white/10 rounded-2xl bg-[#0f172a] p-8 md:p-12 relative overflow-hidden">
+                        <div class="relative z-10">
+                            <h2 class="text-3xl md:text-4xl font-serif italic text-white mb-6">Reflection</h2>
+                            <p class="text-slate-300 mb-6">
+                                Since this was a capstone project, we couldn't measure live post-launch metrics. However, the qualitative feedback from our testing sessions was clear: <strong class="text-white">Users feel safer when the system curates for them.</strong>
+                            </p>
+                            <p class="text-muted text-sm">
+                                If implemented, we hypothesize a significant reduction in time-to-book and an increase in return user rate (CLV), as the platform transforms from a directory into a concierge.
+                            </p>
+                            
+                            <!-- Tech Stack -->
+                            <div class="mt-12 border-t border-white/10 pt-8">
+                                <div class="flex flex-col md:flex-row justify-between items-center gap-6">
+                                    <span class="text-xs font-bold uppercase tracking-widest text-[#829DF1]">Tech Stack</span>
+                                    <div class="flex gap-6 text-2xl text-muted">
+                                        <i class="fab fa-figma hover:text-white transition-colors" title="Figma"></i>
+                                        <i class="fas fa-layer-group hover:text-white transition-colors" title="Design System"></i>
+                                        <i class="fas fa-brain hover:text-white transition-colors" title="User Research"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+            </article>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer id="contact" class="py-32 px-6 md:px-12 bg-bg text-center relative z-10 border-t border-border overflow-hidden">
+        <!-- Footer Glow -->
+        <div class="absolute bottom-0 left-1/2 -translate-x-1/2 w-[800px] h-[500px] bg-[#829DF1]/5 rounded-full blur-[150px] pointer-events-none"></div>
+
+        <div class="max-w-[1200px] mx-auto relative z-10">
+            <h2 class="text-6xl md:text-9xl font-serif italic font-medium tracking-tight mb-16 text-white reveal">
+                Let's break the ice.
+            </h2>
+            <div class="flex justify-center mb-24 reveal delay-100">
+                <a href="https://calendly.com/itsdurgeshray/ice-breaking-call/" class="group relative w-48 h-48 md:w-64 md:h-64 rounded-full border border-[#829DF1]/30 flex items-center justify-center hover:bg-[#829DF1] hover:border-[#829DF1] transition-all duration-500 hover-target hover:scale-110">
+                     <div class="absolute inset-0 rounded-full bg-[#829DF1]/10 scale-0 group-hover:scale-150 transition-transform duration-700 ease-out"></div>
+                     <div class="flex flex-col items-center gap-2 relative z-10">
+                        <span class="text-sm font-sans font-bold uppercase tracking-widest text-[#829DF1] group-hover:text-[#020617]">Start Project</span>
+                        <i class="fas fa-arrow-right -rotate-45 text-2xl text-[#829DF1] group-hover:text-[#020617] transition-transform group-hover:rotate-0"></i>
+                     </div>
+                </a>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 border-t border-white/10 pt-12 reveal delay-200 text-left md:text-center">
+                <div class="flex flex-col gap-2 md:items-start">
+                    <span class="text-xs font-sans text-muted uppercase tracking-widest">Contact</span>
+                    <a href="mailto:iamdurgeshkumarofficial@gmail.com" class="text-lg font-sans font-medium text-white hover:text-[#829DF1] transition-colors hover-target">hello@durgesh.ray</a>
+                </div>
+                <div class="flex flex-col gap-2 md:items-center">
+                    <span class="text-xs font-sans text-muted uppercase tracking-widest">Socials</span>
+                    <div class="flex gap-6 justify-center">
+                         <a href="https://www.x.com/itsdurgeshray/" target="_blank" class="text-white hover:text-[#829DF1] transition-colors hover-target"><i class="fab fa-twitter text-xl"></i></a>
+                         <a href="https://www.dribbble.com/itsdurgeshray/" target="_blank" class="text-white hover:text-[#829DF1] transition-colors hover-target"><i class="fab fa-dribbble text-xl"></i></a>
+                         <a href="https://www.medium.com/@itsdurgeshray/" target="_blank" class="text-white hover:text-[#829DF1] transition-colors hover-target"><i class="fab fa-medium text-xl"></i></a>
+                    </div>
+                </div>
+                <div class="flex flex-col gap-2 md:items-end">
+                    <span class="text-xs font-sans text-muted uppercase tracking-widest">Location</span>
+                    <span class="text-lg font-sans font-medium text-white">India <span id="time" class="text-muted text-sm ml-2"></span></span>
+                </div>
+            </div>
+            <div class="mt-12 text-[10px] font-sans font-bold text-muted/50 uppercase tracking-widest reveal delay-300">
+                © 2025 Durgesh Ray. All Rights Reserved.
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Cursor
+        const cursor = document.querySelector('.custom-cursor');
+        document.addEventListener('mousemove', (e) => {
+            cursor.style.transform = `translate3d(${e.clientX}px, ${e.clientY}px, 0)`;
+        });
+
+        // Reveal Animation
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if(entry.isIntersecting) entry.target.classList.add('active');
+            });
+        }, { threshold: 0.1 });
+        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+        // TOC Highlighting
+        const tocLinks = document.querySelectorAll('.toc-link');
+        const sections = document.querySelectorAll('section[id]');
+        const tocObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    // FIXED: Added closing parenthesis below
+                    tocLinks.forEach(link => link.classList.remove('active', 'text-[#829DF1]', 'border-[#829DF1]'));
+                    tocLinks.forEach(link => link.classList.add('text-muted', 'border-transparent'));
+                    const activeLink = document.querySelector(`.toc-link[href="#${entry.target.id}"]`);
+                    if (activeLink) {
+                        activeLink.classList.remove('text-muted', 'border-transparent');
+                        activeLink.classList.add('active', 'text-[#829DF1]', 'border-[#829DF1]');
+                    }
+                }
+            });
+        }, { rootMargin: "-20% 0px -70% 0px" });
+        sections.forEach(section => tocObserver.observe(section));
+
+        // Horizontal Drag Scroll Logic
+        const slider = document.getElementById('ideation-slider');
+        let isDown = false;
+        let startX;
+        let scrollLeft;
+
+        slider.addEventListener('mousedown', (e) => {
+            isDown = true;
+            slider.classList.add('active');
+            startX = e.pageX - slider.offsetLeft;
+            scrollLeft = slider.scrollLeft;
+        });
+        slider.addEventListener('mouseleave', () => {
+            isDown = false;
+            slider.classList.remove('active');
+        });
+        slider.addEventListener('mouseup', () => {
+            isDown = false;
+            slider.classList.remove('active');
+        });
+        slider.addEventListener('mousemove', (e) => {
+            if(!isDown) return;
+            e.preventDefault();
+            const x = e.pageX - slider.offsetLeft;
+            const walk = (x - startX) * 2;
+            slider.scrollLeft = scrollLeft - walk;
+        });
+
+        // Time Script
+        const timeDisplay = document.getElementById('time');
+        const updateTime = () => {
+            const now = new Date();
+            const options = { timeZone: 'Asia/Kolkata', hour: '2-digit', minute: '2-digit' };
+            timeDisplay.innerText = now.toLocaleTimeString('en-US', options) + ' IST';
+        };
+        setInterval(updateTime, 1000);
+        updateTime();
+    </script>
+</body>
+</html>
