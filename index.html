@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en" class="scroll-smooth bg-[#020617] text-[#e2e8f0]">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,16 +8,17 @@
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-FY9NC6Z78K"></script>
     <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'G-FY9NC6Z78K');
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-FY9NC6Z78K');
     </script>
-    
+
     <!-- SEO -->
     <title>Durgesh Ray | Product Designer</title>
-    <meta name="description" content="Portfolio of Durgesh Ray. I take dry requirements and turn them into breathing digital worlds.">
-    
+    <meta name="description"
+        content="Portfolio of Durgesh Ray. I take dry requirements and turn them into breathing digital worlds.">
+
 
     <!-- Social Preview (Open Graph) -->
     <meta property="og:type" content="website">
@@ -36,14 +38,16 @@
     <meta name="twitter:image" content="https://durgesh-ray.vercel.app/img/brand-assets/social preview.webp">
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
-    
+
     <!-- Media Shader -->
     <script src="https://unpkg.com/media-shader@latest/media-shader.js"></script>
-    
+
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,400;0,600;1,400;1,600&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,400;0,600;1,400;1,600&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
     <script>
@@ -55,11 +59,11 @@
                         'serif': ['"Playfair Display"', 'serif'],
                     },
                     colors: {
-                        'bg': '#020617',       
-                        'surface': '#0f172a',  
-                        'border': 'rgba(130, 157, 241, 0.15)', 
-                        'muted': '#94a3b8',    
-                        'link': '#829DF1',     
+                        'bg': '#020617',
+                        'surface': '#0f172a',
+                        'border': 'rgba(130, 157, 241, 0.15)',
+                        'muted': '#94a3b8',
+                        'link': '#829DF1',
                     },
                     animation: {
                         'scroll': 'scroll 45s linear infinite',
@@ -77,26 +81,41 @@
 
     <style>
         /* --- System --- */
-        body { overflow-x: hidden; -webkit-font-smoothing: antialiased; }
-        
+        body {
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+        }
+
         /* --- FORCE HIDE DEFAULT CURSOR --- */
-        html, body, a, button, input, textarea, .cursor-none {
+        html,
+        body,
+        a,
+        button,
+        input,
+        textarea,
+        .cursor-none {
             cursor: none !important;
         }
-        
+
         /* --- Custom Cursor --- */
         .custom-cursor {
             position: fixed;
-            top: 0; left: 0;
-            width: 24px; height: 24px;
+            top: 0;
+            left: 0;
+            width: 24px;
+            height: 24px;
             z-index: 9999;
             pointer-events: none;
             will-change: transform;
         }
 
         /* --- Hero Text Morph --- */
-        .hero-container { position: relative; display: inline-flex; align-items: baseline; }
-        
+        .hero-container {
+            position: relative;
+            display: inline-flex;
+            align-items: baseline;
+        }
+
         .morph-letter {
             display: inline-block;
             max-width: 0;
@@ -106,10 +125,10 @@
             transform: translateY(10px);
             transition: all 0.8s cubic-bezier(0.34, 1.56, 0.64, 1);
             font-family: "Playfair Display", serif;
-            font-weight: 600; 
+            font-weight: 600;
             font-style: italic;
-            color: #94a3b8; 
-            line-height: 1.1; 
+            color: #94a3b8;
+            line-height: 1.1;
             white-space: nowrap;
         }
 
@@ -123,40 +142,55 @@
         }
 
         /* Animation State */
-        .hero-container:hover .morph-letter.morph-short, 
+        .hero-container:hover .morph-letter.morph-short,
         .hero-container.active .morph-letter.morph-short {
-            max-width: 1.2em; 
-            opacity: 1;
-            transform: translateY(0);
-            margin: 0 1px;
-            color: #ffffff; 
-            text-shadow: 0 0 10px rgba(130, 157, 241, 0.4); 
-        }
-
-        .hero-container:hover .morph-letter.morph-long, 
-        .hero-container.active .morph-letter.morph-long {
-            max-width: 4.5em; 
+            max-width: 1.2em;
             opacity: 1;
             transform: translateY(0);
             margin: 0 1px;
             color: #ffffff;
             text-shadow: 0 0 10px rgba(130, 157, 241, 0.4);
         }
-        
-        .hero-container:hover .anchor-letter, .hero-container.active .anchor-letter {
+
+        .hero-container:hover .morph-letter.morph-long,
+        .hero-container.active .morph-letter.morph-long {
+            max-width: 4.5em;
+            opacity: 1;
+            transform: translateY(0);
+            margin: 0 1px;
+            color: #ffffff;
+            text-shadow: 0 0 10px rgba(130, 157, 241, 0.4);
+        }
+
+        .hero-container:hover .anchor-letter,
+        .hero-container.active .anchor-letter {
             font-weight: 300;
             color: white;
             text-shadow: 0 0 10px rgba(130, 157, 241, 0.3);
         }
 
         /* --- Reveal --- */
-        .reveal { opacity: 0; transform: translateY(30px); transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1); }
-        .reveal.active { opacity: 1; transform: translateY(0); }
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
 
         /* --- Hide Scrollbar --- */
-        .no-scrollbar::-webkit-scrollbar { display: none; }
-        .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
-        
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+
         /* --- Shader Container --- */
         .shader-bg {
             position: absolute;
@@ -164,13 +198,14 @@
             left: 0;
             width: 100%;
             height: 100%;
-            z-index: 0; 
+            z-index: 0;
             opacity: 0.6;
             pointer-events: none;
             mix-blend-mode: screen;
         }
     </style>
 </head>
+
 <body class="bg-bg text-white selection:bg-[#829DF1] selection:text-black">
 
     <!-- Marginal Grid -->
@@ -190,29 +225,35 @@
             <div class="border-r border-[#829DF1]/10 h-full border-dashed hidden md:block"></div>
         </div>
     </div>
-    
+
     <!-- Cursor -->
     <div class="custom-cursor hidden md:block">
         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M5.65376 12.3673H5.46026L5.31717 12.4976L0.500002 16.8829L0.500002 1.19841L11.7841 12.3673H5.65376Z" fill="#000000" stroke="#829DF1" stroke-width="1.5"/>
+            <path
+                d="M5.65376 12.3673H5.46026L5.31717 12.4976L0.500002 16.8829L0.500002 1.19841L11.7841 12.3673H5.65376Z"
+                fill="#000000" stroke="#829DF1" stroke-width="1.5" />
         </svg>
     </div>
 
     <!-- Navigation -->
     <nav class="fixed top-6 left-0 w-full z-50 flex justify-center pointer-events-none">
         <div class="reveal pointer-events-auto">
-            <div class="bg-[#0f172a]/60 backdrop-blur-xl border border-[#829DF1]/20 rounded-full px-6 py-2.5 flex items-center gap-10 shadow-2xl shadow-black/50">
-                <a href="index.html" aria-label="Home" class="hover-target w-6 h-6 text-white hover:text-[#829DF1] transition-colors">
+            <div
+                class="bg-[#0f172a]/60 backdrop-blur-xl border border-[#829DF1]/20 rounded-full px-6 py-2.5 flex items-center gap-10 shadow-2xl shadow-black/50">
+                <a href="index.html" aria-label="Home"
+                    class="hover-target w-6 h-6 text-white hover:text-[#829DF1] transition-colors">
                     <img src="img/brand-assets/logo.webp" alt="Durgesh Ray Logo" class="w-full h-full object-contain">
                 </a>
-                
-                <div class="flex gap-8 font-sans text-[11px] font-semibold text-muted uppercase tracking-widest items-center">
+
+                <div
+                    class="flex gap-8 font-sans text-[11px] font-semibold text-muted uppercase tracking-widest items-center">
                     <a href="#works" class="hover:text-[#829DF1] transition-colors hover-target">Works</a>
                     <a href="#poems" class="hover:text-[#829DF1] transition-colors hover-target">Musings</a>
                     <a href="#me" class="hover:text-[#829DF1] transition-colors hover-target">Me</a>
                 </div>
 
-                <a href="https://calendly.com/itsdurgeshray/ice-breaking-call" class="hidden md:block bg-white/5 hover:bg-white hover:text-black text-white border border-white/30 px-5 py-1.5 rounded-full text-[10px] font-bold uppercase tracking-wider transition-all hover-target">
+                <a href="https://calendly.com/itsdurgeshray/ice-breaking-call"
+                    class="hidden md:block bg-white/5 hover:bg-white hover:text-black text-white border border-white/30 px-5 py-1.5 rounded-full text-[10px] font-bold uppercase tracking-wider transition-all hover-target">
                     Let's Talk
                 </a>
             </div>
@@ -221,8 +262,8 @@
 
     <!-- HERO -->
     <header class="min-h-screen flex flex-col justify-center items-center relative px-4 overflow-hidden">
-        
-<!-- Shader Background (God Rays) -->
+
+        <!-- Shader Background (God Rays) -->
         <div class="shader-bg">
             <media-shader width="100%" height="100%" fragment-shader="#version 300 es
             precision highp float;
@@ -577,24 +618,30 @@
                 float brightness = 1.0*u_reach - (coord.y / u_resolution.y);
                 fragColor *= (brightness + (0.5+ u_intensity));
                 glFragColor = fragColor;
-            }" uniforms='{"u_colors":[[0.5098039215686274,0.615686274509804,0.9450980392156862,1],[0.6431372549019608,0.7215686274509804,0.9568627450980393,1]],"u_intensity":0.946,"u_rays":0.021,"u_reach":0.221}'>
+            }"
+                uniforms='{"u_colors":[[0.5098039215686274,0.615686274509804,0.9450980392156862,1],[0.6431372549019608,0.7215686274509804,0.9568627450980393,1]],"u_intensity":0.946,"u_rays":0.021,"u_reach":0.221}'>
             </media-shader>
         </div>
 
         <!-- Status Banner -->
         <div class="mb-12 reveal relative z-10">
-            <a href="https://calendly.com/itsdurgeshray/ice-breaking-call" target="_blank" class="inline-flex items-center gap-3 border border-[#829DF1]/30 bg-[#0f172a]/40 backdrop-blur-md px-5 py-2 rounded-full hover:bg-[#829DF1]/10 hover:scale-105 hover:border-[#829DF1] transition-all duration-300 hover-target group cursor-pointer">
+            <a href="https://calendly.com/itsdurgeshray/ice-breaking-call" target="_blank"
+                class="inline-flex items-center gap-3 border border-[#829DF1]/30 bg-[#0f172a]/40 backdrop-blur-md px-5 py-2 rounded-full hover:bg-[#829DF1]/10 hover:scale-105 hover:border-[#829DF1] transition-all duration-300 hover-target group cursor-pointer">
                 <span class="relative flex h-2 w-2">
-                  <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
-                  <span class="relative inline-flex rounded-full h-2 w-2 bg-green-500"></span>
+                    <span
+                        class="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
+                    <span class="relative inline-flex rounded-full h-2 w-2 bg-green-500"></span>
                 </span>
-                <span class="font-sans text-[10px] font-bold tracking-[0.2em] uppercase text-[#829DF1] group-hover:text-white transition-colors">Available for Work</span>
+                <span
+                    class="font-sans text-[10px] font-bold tracking-[0.2em] uppercase text-[#829DF1] group-hover:text-white transition-colors">Available
+                    for Work</span>
             </a>
         </div>
 
         <!-- Morphing Text -->
         <div id="hero-anim" class="hero-container relative z-10 cursor-pointer hover-target select-none py-6">
-            <h1 class="text-[11vw] md:text-[12.5vw] leading-none tracking-tighter flex items-baseline justify-center drop-shadow-[0_0_40px_rgba(130,157,241,0.2)]">
+            <h1
+                class="text-[11vw] md:text-[12.5vw] leading-none tracking-tighter flex items-baseline justify-center drop-shadow-[0_0_40px_rgba(130,157,241,0.2)]">
                 <span class="anchor-letter">P</span>
                 <span class="anchor-letter">R</span>
                 <span class="morph-letter morph-short">O</span>
@@ -606,7 +653,8 @@
         <!-- Playful & Poetic Subtext -->
         <div class="mt-12 max-w-md text-center reveal delay-100 relative z-10">
             <p class="text-muted text-sm md:text-lg leading-relaxed font-light font-sans">
-                I distill chaos of <span class="text-white font-semibold">requirements</span> in elegance of <span class="font-serif italic text-white text-xl">products</span>.
+                I distill chaos of <span class="text-white font-semibold">requirements</span> in elegance of <span
+                    class="font-serif italic text-white text-xl">products</span>.
             </p>
         </div>
 
@@ -617,45 +665,68 @@
     </header>
 
     <!-- CLIENTS -->
-<section class="py-12 border-y border-border bg-[#020617]/90 backdrop-blur-sm overflow-hidden relative">
-  <div class="text-center mb-8 reveal">
-      <h3 class="font-serif italic text-xl text-[#829DF1] opacity-80">forged alliances</h3>
-  </div>
+    <section class="py-12 border-y border-border bg-[#020617]/90 backdrop-blur-sm overflow-hidden relative">
+        <div class="text-center mb-8 reveal">
+            <h3 class="font-serif italic text-xl text-[#829DF1] opacity-80">forged alliances</h3>
+        </div>
 
-  <div class="w-full overflow-hidden [mask-image:linear-gradient(to_right,transparent,black_10%,black_90%,transparent)]">
-      <div class="flex w-max animate-scroll">
-          <!-- SET 1 -->
-          <div class="flex shrink-0 items-center gap-16 px-12">
-              <img src="img/clients/clients-01.svg" alt="Client 1" class="h-24 md:h-24 w-auto opacity-60 hover:opacity-100 transition-opacity hover-target">
-              <img src="img/clients/clients-02.svg" alt="Client 2" class="h-10 md:h-16 w-auto opacity-60 hover:opacity-100 transition-opacity hover-target">
-              <img src="img/clients/clients-03.svg" alt="Client 3" class="h-12 md:h-16 w-auto opacity-60 hover:opacity-100 transition-opacity hover-target">
-              <img src="img/clients/clients-04.svg" alt="Client 4" class="h-12 md:h-16 w-auto opacity-60 hover:opacity-100 transition-opacity hover-target">
-              <img src="img/clients/clients-05.svg" alt="Client 5" class="h-12 md:h-16 w-auto opacity-60 hover:opacity-100 transition-opacity hover-target">
-              <img src="img/clients/clients-06.svg" alt="Client 6" class="h-12 md:h-16 w-auto opacity-60 hover:opacity-100 transition-opacity hover-target">
-              <img src="img/clients/clients-07.svg" alt="Client 7" class="h-12 md:h-16 w-auto opacity-60 hover:opacity-100 transition-opacity hover-target">
-              <img src="img/clients/clients-08.svg" alt="Client 8" class="h-14 md:h-16 w-auto opacity-60 hover:opacity-100 transition-opacity hover-target">
-              <img src="img/clients/clients-09.svg" alt="Client 9" class="h-12 md:h-16 w-auto opacity-60 hover:opacity-100 transition-opacity hover-target">
-              <img src="img/clients/clients-10.svg" alt="Client 10" class="h-12 md:h-16 w-auto opacity-60 hover:opacity-100 transition-opacity hover-target">
-              <img src="img/clients/clients-11.svg" alt="Client 11" class="h-12 md:h-16 w-auto opacity-60 hover:opacity-100 transition-opacity hover-target">
-          </div>
+        <div
+            class="w-full overflow-hidden [mask-image:linear-gradient(to_right,transparent,black_10%,black_90%,transparent)]">
+            <div class="flex w-max animate-scroll">
+                <!-- SET 1 -->
+                <div class="flex shrink-0 items-center gap-16 px-12">
+                    <img src="img/clients/clients-01.svg" alt="Client 1"
+                        class="h-24 md:h-24 w-auto opacity-60 hover:opacity-100 transition-opacity hover-target">
+                    <img src="img/clients/clients-02.svg" alt="Client 2"
+                        class="h-10 md:h-16 w-auto opacity-60 hover:opacity-100 transition-opacity hover-target">
+                    <img src="img/clients/clients-03.svg" alt="Client 3"
+                        class="h-12 md:h-16 w-auto opacity-60 hover:opacity-100 transition-opacity hover-target">
+                    <img src="img/clients/clients-04.svg" alt="Client 4"
+                        class="h-12 md:h-16 w-auto opacity-60 hover:opacity-100 transition-opacity hover-target">
+                    <img src="img/clients/clients-05.svg" alt="Client 5"
+                        class="h-12 md:h-16 w-auto opacity-60 hover:opacity-100 transition-opacity hover-target">
+                    <img src="img/clients/clients-06.svg" alt="Client 6"
+                        class="h-12 md:h-16 w-auto opacity-60 hover:opacity-100 transition-opacity hover-target">
+                    <img src="img/clients/clients-07.svg" alt="Client 7"
+                        class="h-12 md:h-16 w-auto opacity-60 hover:opacity-100 transition-opacity hover-target">
+                    <img src="img/clients/clients-08.svg" alt="Client 8"
+                        class="h-14 md:h-16 w-auto opacity-60 hover:opacity-100 transition-opacity hover-target">
+                    <img src="img/clients/clients-09.svg" alt="Client 9"
+                        class="h-12 md:h-16 w-auto opacity-60 hover:opacity-100 transition-opacity hover-target">
+                    <img src="img/clients/clients-10.svg" alt="Client 10"
+                        class="h-12 md:h-16 w-auto opacity-60 hover:opacity-100 transition-opacity hover-target">
+                    <img src="img/clients/clients-11.svg" alt="Client 11"
+                        class="h-12 md:h-16 w-auto opacity-60 hover:opacity-100 transition-opacity hover-target">
+                </div>
 
-          <!-- SET 2 -->
-          <div class="flex shrink-0 items-center gap-16 px-12">
-              <img src="img/clients/clients-01.svg" alt="Client 1" class="h-12 md:h-24 w-auto opacity-60 hover:opacity-100 transition-opacity hover-target">
-              <img src="img/clients/clients-02.svg" alt="Client 2" class="h-10 md:h-16 w-auto opacity-60 hover:opacity-100 transition-opacity hover-target">
-              <img src="img/clients/clients-03.svg" alt="Client 3" class="h-12 md:h-16 w-auto opacity-60 hover:opacity-100 transition-opacity hover-target">
-              <img src="img/clients/clients-04.svg" alt="Client 4" class="h-12 md:h-16 w-auto opacity-60 hover:opacity-100 transition-opacity hover-target">
-              <img src="img/clients/clients-05.svg" alt="Client 5" class="h-12 md:h-16 w-auto opacity-60 hover:opacity-100 transition-opacity hover-target">
-              <img src="img/clients/clients-06.svg" alt="Client 6" class="h-12 md:h-16 w-auto opacity-60 hover:opacity-100 transition-opacity hover-target">
-              <img src="img/clients/clients-07.svg" alt="Client 7" class="h-12 md:h-16 w-auto opacity-60 hover:opacity-100 transition-opacity hover-target">
-              <img src="img/clients/clients-08.svg" alt="Client 8" class="h-12 md:h-14 w-auto opacity-60 hover:opacity-100 transition-opacity hover-target">
-              <img src="img/clients/clients-09.svg" alt="Client 9" class="h-12 md:h-16 w-auto opacity-60 hover:opacity-100 transition-opacity hover-target">
-              <img src="img/clients/clients-10.svg" alt="Client 10" class="h-12 md:h-16 w-auto opacity-60 hover:opacity-100 transition-opacity hover-target">
-              <img src="img/clients/clients-11.svg" alt="Client 11" class="h-12 md:h-16 w-auto opacity-60 hover:opacity-100 transition-opacity hover-target">
-          </div>
-      </div>
-  </div>
-</section>
+                <!-- SET 2 -->
+                <div class="flex shrink-0 items-center gap-16 px-12">
+                    <img src="img/clients/clients-01.svg" alt="Client 1"
+                        class="h-12 md:h-24 w-auto opacity-60 hover:opacity-100 transition-opacity hover-target">
+                    <img src="img/clients/clients-02.svg" alt="Client 2"
+                        class="h-10 md:h-16 w-auto opacity-60 hover:opacity-100 transition-opacity hover-target">
+                    <img src="img/clients/clients-03.svg" alt="Client 3"
+                        class="h-12 md:h-16 w-auto opacity-60 hover:opacity-100 transition-opacity hover-target">
+                    <img src="img/clients/clients-04.svg" alt="Client 4"
+                        class="h-12 md:h-16 w-auto opacity-60 hover:opacity-100 transition-opacity hover-target">
+                    <img src="img/clients/clients-05.svg" alt="Client 5"
+                        class="h-12 md:h-16 w-auto opacity-60 hover:opacity-100 transition-opacity hover-target">
+                    <img src="img/clients/clients-06.svg" alt="Client 6"
+                        class="h-12 md:h-16 w-auto opacity-60 hover:opacity-100 transition-opacity hover-target">
+                    <img src="img/clients/clients-07.svg" alt="Client 7"
+                        class="h-12 md:h-16 w-auto opacity-60 hover:opacity-100 transition-opacity hover-target">
+                    <img src="img/clients/clients-08.svg" alt="Client 8"
+                        class="h-12 md:h-14 w-auto opacity-60 hover:opacity-100 transition-opacity hover-target">
+                    <img src="img/clients/clients-09.svg" alt="Client 9"
+                        class="h-12 md:h-16 w-auto opacity-60 hover:opacity-100 transition-opacity hover-target">
+                    <img src="img/clients/clients-10.svg" alt="Client 10"
+                        class="h-12 md:h-16 w-auto opacity-60 hover:opacity-100 transition-opacity hover-target">
+                    <img src="img/clients/clients-11.svg" alt="Client 11"
+                        class="h-12 md:h-16 w-auto opacity-60 hover:opacity-100 transition-opacity hover-target">
+                </div>
+            </div>
+        </div>
+    </section>
 
 
 
@@ -663,24 +734,33 @@
     <section id="works" class="py-32 px-6 md:px-12 max-w-[1400px] mx-auto relative z-10">
         <div class="flex flex-col md:flex-row md:items-end justify-between mb-24 reveal">
             <div>
-                <h2 class="text-5xl md:text-7xl font-serif italic font-medium tracking-tight text-white mb-4 drop-shadow-lg">Selected Stories</h2>
-                <p class="text-muted font-sans text-sm max-w-xs">Where logic meets emotion, and silence meets the screen.</p>
+                <h2
+                    class="text-5xl md:text-7xl font-serif italic font-medium tracking-tight text-white mb-4 drop-shadow-lg">
+                    Selected Stories</h2>
+                <p class="text-muted font-sans text-sm max-w-xs">Where logic meets emotion, and silence meets the
+                    screen.</p>
             </div>
         </div>
 
         <div class="flex flex-col gap-32 md:gap-48">
-            
+
             <!-- Project 1 -->
-            <a href="https://medium.com/@itsdurgeshray/lead-gen-makeover-for-weframe-tech-4fa145d09a19" class="block group hover-target cursor-none reveal">
-                <div class="aspect-[16/10] w-full bg-surface border border-border rounded-2xl overflow-hidden relative mb-8">
-                    <img src="img/case study/weframe_tech_case_study.webp" alt="Weframe Tech Case Study" class="w-full h-full object-cover transition-transform duration-1000 ease-out group-hover:scale-105">
+            <a href="wft-blog.html" class="block group hover-target cursor-none reveal">
+                <div
+                    class="aspect-[16/10] w-full bg-surface border border-border rounded-2xl overflow-hidden relative mb-8">
+                    <img src="img/case study/weframe_tech_case_study.webp" alt="Weframe Tech Case Study"
+                        class="w-full h-full object-cover transition-transform duration-1000 ease-out group-hover:scale-105">
                 </div>
                 <div class="flex flex-col md:flex-row md:items-end justify-between gap-4 border-b border-border pb-8">
                     <div>
-                        <h3 class="text-3xl md:text-4xl font-sans font-medium mb-2 text-white transition-colors group-hover:text-[#829DF1]">WeframeTech</h3>
-                        <p class="text-muted font-sans text-sm max-w-lg">Refactoring a digital agency's web presence to drive inbound leads through a custom instant quotation funnel and trust-focused UX.</p>
+                        <h3
+                            class="text-3xl md:text-4xl font-sans font-medium mb-2 text-white transition-colors group-hover:text-[#829DF1]">
+                            WeframeTech</h3>
+                        <p class="text-muted font-sans text-sm max-w-lg">Refactoring a digital agency's web presence to
+                            drive inbound leads through a custom instant quotation funnel and trust-focused UX.</p>
                     </div>
-                    <div class="w-12 h-12 border border-[#829DF1]/30 rounded-full flex items-center justify-center group-hover:bg-[#829DF1] group-hover:text-slate-900 transition-all text-[#829DF1]">
+                    <div
+                        class="w-12 h-12 border border-[#829DF1]/30 rounded-full flex items-center justify-center group-hover:bg-[#829DF1] group-hover:text-slate-900 transition-all text-[#829DF1]">
                         <i class="fas fa-arrow-right -rotate-45"></i>
                     </div>
                 </div>
@@ -688,15 +768,21 @@
 
             <!-- Project 2 -->
             <a href="bdc-blog.html" class="block group hover-target cursor-none reveal">
-                <div class="aspect-[16/10] w-full bg-surface border border-border rounded-2xl overflow-hidden relative mb-8">
-                    <img src="img/case study/bookingcom_case_study.webp" alt="Booking.com Case Study" class="w-full h-full object-cover transition-transform duration-1000 ease-out group-hover:scale-105">
+                <div
+                    class="aspect-[16/10] w-full bg-surface border border-border rounded-2xl overflow-hidden relative mb-8">
+                    <img src="img/case study/bookingcom_case_study.webp" alt="Booking.com Case Study"
+                        class="w-full h-full object-cover transition-transform duration-1000 ease-out group-hover:scale-105">
                 </div>
                 <div class="flex flex-col md:flex-row md:items-end justify-between gap-4 border-b border-border pb-8">
                     <div>
-                        <h3 class="text-3xl md:text-4xl font-sans font-medium mb-2 text-white transition-colors group-hover:text-[#829DF1]">Booking.com</h3>
-                        <p class="text-muted font-sans text-sm max-w-lg">Increasing Booking Conversion Rate by curing decision paralysis through data-driven recommendations engine.</p>
+                        <h3
+                            class="text-3xl md:text-4xl font-sans font-medium mb-2 text-white transition-colors group-hover:text-[#829DF1]">
+                            Booking.com</h3>
+                        <p class="text-muted font-sans text-sm max-w-lg">Increasing Booking Conversion Rate by curing
+                            decision paralysis through data-driven recommendations engine.</p>
                     </div>
-                    <div class="w-12 h-12 border border-[#829DF1]/30 rounded-full flex items-center justify-center group-hover:bg-[#829DF1] group-hover:text-slate-900 transition-all text-[#829DF1]">
+                    <div
+                        class="w-12 h-12 border border-[#829DF1]/30 rounded-full flex items-center justify-center group-hover:bg-[#829DF1] group-hover:text-slate-900 transition-all text-[#829DF1]">
                         <i class="fas fa-arrow-right -rotate-45"></i>
                     </div>
                 </div>
@@ -708,58 +794,81 @@
     <!-- UI PLAYGROUND -->
     <section class="py-32 border-t border-border bg-[#020617]/50 relative z-10">
         <!-- Updated Header Layout -->
-        <div class="flex flex-col md:flex-row md:items-end justify-between px-6 md:px-12 mb-12 reveal max-w-[1400px] mx-auto">
+        <div
+            class="flex flex-col md:flex-row md:items-end justify-between px-6 md:px-12 mb-12 reveal max-w-[1400px] mx-auto">
             <div>
-                <h2 class="text-5xl md:text-7xl font-serif italic font-medium tracking-tight text-white mb-4">Visual Artifacts</h2>
-                <p class="text-muted font-sans text-sm max-w-xs">Fleeting thoughts and visual rhymes, captured in the grid.</p>
+                <h2 class="text-5xl md:text-7xl font-serif italic font-medium tracking-tight text-white mb-4">Visual
+                    Artifacts</h2>
+                <p class="text-muted font-sans text-sm max-w-xs">Fleeting thoughts and visual rhymes, captured in the
+                    grid.</p>
             </div>
-             <!-- Added Link Option -->
-            <a href="https://www.dribbble.com/itsdurgeshray" class="font-sans text-xs font-medium text-[#829DF1] uppercase tracking-widest hidden md:block mt-4 md:mt-0 hover:text-white transition-colors hover-target">[view all]</a>
+            <!-- Added Link Option -->
+            <a href="https://www.dribbble.com/itsdurgeshray"
+                class="font-sans text-xs font-medium text-[#829DF1] uppercase tracking-widest block mt-4 md:mt-0 hover:text-white transition-colors hover-target">[view
+                all]</a>
         </div>
-        
+
         <div class="grid grid-cols-1 md:grid-cols-2 gap-8 px-6 md:px-12 pb-12 max-w-[1400px] mx-auto">
             <!-- Card 1 -->
-            <a href="https://dribbble.com/shots/26786643-Analytics-Task-Tracking-Construction-App-UI" class="block aspect-[4/3] bg-surface border border-border rounded-2xl relative group overflow-hidden hover-target reveal">
-                <img src="img/ui/UI-01.webp" alt="UI Experiment" class="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105">
+            <a href="https://dribbble.com/shots/26786643-Analytics-Task-Tracking-Construction-App-UI"
+                class="block aspect-[4/3] bg-surface border border-border rounded-2xl relative group overflow-hidden hover-target reveal">
+                <img src="img/ui/UI-01.webp" alt="UI Experiment"
+                    class="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105">
             </a>
-             <!-- Card 2 -->
-            <a href="https://dribbble.com/shots/26789408-Subscription-Management-UI" class="block aspect-[4/3] bg-surface border border-border rounded-2xl relative group overflow-hidden hover-target reveal delay-75">
-                <img src="img/ui/UI-02.webp" alt="UI Experiment" class="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105">
+            <!-- Card 2 -->
+            <a href="https://dribbble.com/shots/26789408-Subscription-Management-UI"
+                class="block aspect-[4/3] bg-surface border border-border rounded-2xl relative group overflow-hidden hover-target reveal delay-75">
+                <img src="img/ui/UI-02.webp" alt="UI Experiment"
+                    class="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105">
             </a>
-             <!-- Card 3 -->
-            <a href="https://dribbble.com/shots/26771600-Fitness-Tracking-App" class="block aspect-[4/3] bg-surface border border-border rounded-2xl relative group overflow-hidden hover-target reveal">
-                <img src="img/ui/UI-03.webp" alt="UI Experiment" class="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105">
+            <!-- Card 3 -->
+            <a href="https://dribbble.com/shots/26771600-Fitness-Tracking-App"
+                class="block aspect-[4/3] bg-surface border border-border rounded-2xl relative group overflow-hidden hover-target reveal">
+                <img src="img/ui/UI-03.webp" alt="UI Experiment"
+                    class="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105">
             </a>
-             <!-- Card 4 -->
-            <a href="https://dribbble.com/shots/26787207-Period-Tracking-Wellness-App-UI" class="block aspect-[4/3] bg-surface border border-border rounded-2xl relative group overflow-hidden hover-target reveal delay-75">
-                <img src="img/ui/UI-04.webp" alt="UI Experiment" class="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105">
+            <!-- Card 4 -->
+            <a href="https://dribbble.com/shots/26787207-Period-Tracking-Wellness-App-UI"
+                class="block aspect-[4/3] bg-surface border border-border rounded-2xl relative group overflow-hidden hover-target reveal delay-75">
+                <img src="img/ui/UI-04.webp" alt="UI Experiment"
+                    class="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105">
             </a>
         </div>
     </section>
 
     <!-- VERSES (Tall Portrait Images) -->
-    <section id="poems" class="py-32 px-6 md:px-12 max-w-[1200px] mx-auto relative z-10 border-t border-border bg-[#020617]/50">
+    <section id="poems"
+        class="py-32 px-6 md:px-12 max-w-[1200px] mx-auto relative z-10 border-t border-border bg-[#020617]/50">
         <div class="mb-16 reveal text-center md:text-left">
-            <h2 class="text-5xl md:text-7xl font-serif italic font-medium tracking-tight text-white mb-4">Voided Verses</h2>
-            <p class="text-muted font-sans text-sm max-w-xs mx-auto md:mx-0">Leftover ink spilled from canvas to paper</p>
+            <h2 class="text-5xl md:text-7xl font-serif italic font-medium tracking-tight text-white mb-4">Voided Verses
+            </h2>
+            <p class="text-muted font-sans text-sm max-w-xs mx-auto md:mx-0">Leftover ink spilled from canvas to paper
+            </p>
         </div>
 
         <div class="flex flex-col gap-8">
             <!-- Poem Card 1 -->
-            <a href="venus-personified.html" class="group block p-4 md:p-6 bg-surface border border-border rounded-3xl hover:border-[#829DF1]/30 transition-all duration-500 hover-target reveal">
+            <a href="venus-personified.html"
+                class="group block p-4 md:p-6 bg-surface border border-border rounded-3xl hover:border-[#829DF1]/30 transition-all duration-500 hover-target reveal">
                 <div class="flex flex-col md:flex-row gap-6 md:gap-12 items-center">
                     <!-- Image Container: Width 35% and Aspect Ratio 3/4 (Portrait) -->
                     <div class="w-full md:w-[35%] aspect-[3/4] overflow-hidden rounded-2xl relative">
-                        <div class="absolute inset-0 bg-slate-900/10 group-hover:bg-transparent transition-colors z-10"></div>
-                        <img src="img/poems/poem-01.webp" alt="Poem Visualization" class="w-full h-full object-cover transition-all duration-700 ease-out group-hover:scale-105">
+                        <div class="absolute inset-0 bg-slate-900/10 group-hover:bg-transparent transition-colors z-10">
+                        </div>
+                        <img src="img/poems/poem-01.webp" alt="Poem Visualization"
+                            class="w-full h-full object-cover transition-all duration-700 ease-out group-hover:scale-105">
                     </div>
-                    
+
                     <div class="flex-1 space-y-4 md:pr-8 text-center md:text-left">
-                        <h3 class="text-2xl md:text-3xl font-serif italic text-white group-hover:text-[#829DF1] transition-colors">Venus Personified</h3>
+                        <h3
+                            class="text-2xl md:text-3xl font-serif italic text-white group-hover:text-[#829DF1] transition-colors">
+                            Venus Personified</h3>
                         <p class="text-muted font-sans text-sm leading-relaxed line-clamp-2">
-                            A cosmic ode trying to personify venus in reference to astronomy, astrology & roman mythology.
+                            A cosmic ode trying to personify venus in reference to astronomy, astrology & roman
+                            mythology.
                         </p>
-                        <div class="pt-4 flex items-center justify-center md:justify-start gap-2 text-[#829DF1] text-[10px] font-sans font-bold uppercase tracking-widest group-hover:gap-4 transition-all">
+                        <div
+                            class="pt-4 flex items-center justify-center md:justify-start gap-2 text-[#829DF1] text-[10px] font-sans font-bold uppercase tracking-widest group-hover:gap-4 transition-all">
                             <span>Read Poem</span>
                             <i class="fas fa-arrow-right"></i>
                         </div>
@@ -768,20 +877,26 @@
             </a>
 
             <!-- Poem Card 2 -->
-            <a href="shattered_now-crumbling_forever.html" class="group block p-4 md:p-6 bg-surface border border-border rounded-3xl hover:border-[#829DF1]/30 transition-all duration-500 hover-target reveal">
+            <a href="shattered_now-crumbling_forever.html"
+                class="group block p-4 md:p-6 bg-surface border border-border rounded-3xl hover:border-[#829DF1]/30 transition-all duration-500 hover-target reveal">
                 <div class="flex flex-col md:flex-row gap-6 md:gap-12 items-center">
                     <!-- Image Container: Width 35% and Aspect Ratio 3/4 (Portrait) -->
                     <div class="w-full md:w-[35%] aspect-[3/4] overflow-hidden rounded-2xl relative">
-                        <div class="absolute inset-0 bg-slate-900/10 group-hover:bg-transparent transition-colors z-10"></div>
-                        <img src="img/poems/poem-02.webp" alt="Poem Visualization" class="w-full h-full object-cover transition-all duration-700 ease-out group-hover:scale-105">
+                        <div class="absolute inset-0 bg-slate-900/10 group-hover:bg-transparent transition-colors z-10">
+                        </div>
+                        <img src="img/poems/poem-02.webp" alt="Poem Visualization"
+                            class="w-full h-full object-cover transition-all duration-700 ease-out group-hover:scale-105">
                     </div>
-                    
+
                     <div class="flex-1 space-y-4 md:pr-8 text-center md:text-left">
-                        <h3 class="text-2xl md:text-3xl font-serif italic text-white group-hover:text-[#829DF1] transition-colors">Shattered Now, Crumbling Forever</h3>
+                        <h3
+                            class="text-2xl md:text-3xl font-serif italic text-white group-hover:text-[#829DF1] transition-colors">
+                            Shattered Now, Crumbling Forever</h3>
                         <p class="text-muted font-sans text-sm leading-relaxed line-clamp-2">
                             My way of coping with the grief of my childhood's hero's retirement from T20Is.
                         </p>
-                        <div class="pt-4 flex items-center justify-center md:justify-start gap-2 text-[#829DF1] text-[10px] font-sans font-bold uppercase tracking-widest group-hover:gap-4 transition-all">
+                        <div
+                            class="pt-4 flex items-center justify-center md:justify-start gap-2 text-[#829DF1] text-[10px] font-sans font-bold uppercase tracking-widest group-hover:gap-4 transition-all">
                             <span>Read Poem</span>
                             <i class="fas fa-arrow-right"></i>
                         </div>
@@ -797,66 +912,103 @@
             <h2 class="text-5xl md:text-7xl font-serif italic font-medium text-white mb-4">Beyond the Grids</h2>
             <p class="text-muted font-sans text-sm max-w-xs">Whitespace between the pixels off-screen.</p>
         </div>
-        
-        <div class="w-full overflow-hidden [mask-image:linear-gradient(to_right,transparent,black_10%,black_90%,transparent)]">
+
+        <div
+            class="w-full overflow-hidden [mask-image:linear-gradient(to_right,transparent,black_10%,black_90%,transparent)]">
             <div class="flex w-max animate-scroll hover:pause">
-                
+
                 <!-- IMAGE SET 1 (Originals) -->
-                <div class="w-[300px] h-[400px] bg-surface rounded-2xl overflow-hidden border border-border shrink-0 mr-6">
-                    <img src="img/life/life image 1.webp" alt="Life Off Screen" class="w-full h-full object-cover transition-transform duration-500 hover:scale-105">
+                <div
+                    class="w-[300px] h-[400px] bg-surface rounded-2xl overflow-hidden border border-border shrink-0 mr-6">
+                    <img src="img/life/life image 1.webp" alt="Life Off Screen"
+                        class="w-full h-full object-cover transition-transform duration-500 hover:scale-105">
                 </div>
-                <div class="w-[300px] h-[400px] bg-surface rounded-2xl overflow-hidden border border-border shrink-0 mr-6">
-                    <img src="img/life/life image 2.webp" alt="Life Off Screen" class="w-full h-full object-cover transition-transform duration-500 hover:scale-105">
+                <div
+                    class="w-[300px] h-[400px] bg-surface rounded-2xl overflow-hidden border border-border shrink-0 mr-6">
+                    <img src="img/life/life image 2.webp" alt="Life Off Screen"
+                        class="w-full h-full object-cover transition-transform duration-500 hover:scale-105">
                 </div>
-                <div class="w-[300px] h-[400px] bg-surface rounded-2xl overflow-hidden border border-border shrink-0 mr-6">
-                    <img src="img/life/life image 3.webp" alt="Life Off Screen" class="w-full h-full object-cover transition-transform duration-500 hover:scale-105">
+                <div
+                    class="w-[300px] h-[400px] bg-surface rounded-2xl overflow-hidden border border-border shrink-0 mr-6">
+                    <img src="img/life/life image 3.webp" alt="Life Off Screen"
+                        class="w-full h-full object-cover transition-transform duration-500 hover:scale-105">
                 </div>
-                <div class="w-[300px] h-[400px] bg-surface rounded-2xl overflow-hidden border border-border shrink-0 mr-6">
-                    <img src="img/life/life image 4.webp" alt="Life Off Screen" class="w-full h-full object-cover transition-transform duration-500 hover:scale-105">
+                <div
+                    class="w-[300px] h-[400px] bg-surface rounded-2xl overflow-hidden border border-border shrink-0 mr-6">
+                    <img src="img/life/life image 4.webp" alt="Life Off Screen"
+                        class="w-full h-full object-cover transition-transform duration-500 hover:scale-105">
                 </div>
-                <div class="w-[300px] h-[400px] bg-surface rounded-2xl overflow-hidden border border-border shrink-0 mr-6">
-                    <img src="img/life/life image 5.webp" alt="Life Off Screen" class="w-full h-full object-cover transition-transform duration-500 hover:scale-105">
+                <div
+                    class="w-[300px] h-[400px] bg-surface rounded-2xl overflow-hidden border border-border shrink-0 mr-6">
+                    <img src="img/life/life image 5.webp" alt="Life Off Screen"
+                        class="w-full h-full object-cover transition-transform duration-500 hover:scale-105">
                 </div>
-                <div class="w-[300px] h-[400px] bg-surface rounded-2xl overflow-hidden border border-border shrink-0 mr-6">
-                    <img src="img/life/life image 6.webp" alt="Life Off Screen" class="w-full h-full object-cover transition-transform duration-500 hover:scale-105">
+                <div
+                    class="w-[300px] h-[400px] bg-surface rounded-2xl overflow-hidden border border-border shrink-0 mr-6">
+                    <img src="img/life/life image 6.webp" alt="Life Off Screen"
+                        class="w-full h-full object-cover transition-transform duration-500 hover:scale-105">
                 </div>
-                <div class="w-[300px] h-[400px] bg-surface rounded-2xl overflow-hidden border border-border shrink-0 mr-6">
-                    <img src="img/life/life image 7.webp" alt="Life Off Screen" class="w-full h-full object-cover transition-transform duration-500 hover:scale-105">
+                <div
+                    class="w-[300px] h-[400px] bg-surface rounded-2xl overflow-hidden border border-border shrink-0 mr-6">
+                    <img src="img/life/life image 7.webp" alt="Life Off Screen"
+                        class="w-full h-full object-cover transition-transform duration-500 hover:scale-105">
                 </div>
-                <div class="w-[300px] h-[400px] bg-surface rounded-2xl overflow-hidden border border-border shrink-0 mr-6">
-                    <img src="img/life/life image 8.webp" alt="Life Off Screen" class="w-full h-full object-cover transition-transform duration-500 hover:scale-105">
+                <div
+                    class="w-[300px] h-[400px] bg-surface rounded-2xl overflow-hidden border border-border shrink-0 mr-6">
+                    <img src="img/life/life image 8.webp" alt="Life Off Screen"
+                        class="w-full h-full object-cover transition-transform duration-500 hover:scale-105">
                 </div>
-                <div class="w-[300px] h-[400px] bg-surface rounded-2xl overflow-hidden border border-border shrink-0 mr-6">
-                    <img src="img/life/life image 9.webp" alt="Life Off Screen" class="w-full h-full object-cover transition-transform duration-500 hover:scale-105">
+                <div
+                    class="w-[300px] h-[400px] bg-surface rounded-2xl overflow-hidden border border-border shrink-0 mr-6">
+                    <img src="img/life/life image 9.webp" alt="Life Off Screen"
+                        class="w-full h-full object-cover transition-transform duration-500 hover:scale-105">
                 </div>
 
                 <!-- IMAGE SET 2 (Exact Duplicates) -->
-                <div class="w-[300px] h-[400px] bg-surface rounded-2xl overflow-hidden border border-border shrink-0 mr-6">
-                    <img src="img/life/life image 1.webp" alt="Life Off Screen" class="w-full h-full object-cover transition-transform duration-500 hover:scale-105">
+                <div
+                    class="w-[300px] h-[400px] bg-surface rounded-2xl overflow-hidden border border-border shrink-0 mr-6">
+                    <img src="img/life/life image 1.webp" alt="Life Off Screen"
+                        class="w-full h-full object-cover transition-transform duration-500 hover:scale-105">
                 </div>
-                <div class="w-[300px] h-[400px] bg-surface rounded-2xl overflow-hidden border border-border shrink-0 mr-6">
-                    <img src="img/life/life image 2.webp" alt="Life Off Screen" class="w-full h-full object-cover transition-transform duration-500 hover:scale-105">
+                <div
+                    class="w-[300px] h-[400px] bg-surface rounded-2xl overflow-hidden border border-border shrink-0 mr-6">
+                    <img src="img/life/life image 2.webp" alt="Life Off Screen"
+                        class="w-full h-full object-cover transition-transform duration-500 hover:scale-105">
                 </div>
-                <div class="w-[300px] h-[400px] bg-surface rounded-2xl overflow-hidden border border-border shrink-0 mr-6">
-                    <img src="img/life/life image 3.webp" alt="Life Off Screen" class="w-full h-full object-cover transition-transform duration-500 hover:scale-105">
+                <div
+                    class="w-[300px] h-[400px] bg-surface rounded-2xl overflow-hidden border border-border shrink-0 mr-6">
+                    <img src="img/life/life image 3.webp" alt="Life Off Screen"
+                        class="w-full h-full object-cover transition-transform duration-500 hover:scale-105">
                 </div>
-                <div class="w-[300px] h-[400px] bg-surface rounded-2xl overflow-hidden border border-border shrink-0 mr-6">
-                    <img src="img/life/life image 4.webp" alt="Life Off Screen" class="w-full h-full object-cover transition-transform duration-500 hover:scale-105">
+                <div
+                    class="w-[300px] h-[400px] bg-surface rounded-2xl overflow-hidden border border-border shrink-0 mr-6">
+                    <img src="img/life/life image 4.webp" alt="Life Off Screen"
+                        class="w-full h-full object-cover transition-transform duration-500 hover:scale-105">
                 </div>
-                <div class="w-[300px] h-[400px] bg-surface rounded-2xl overflow-hidden border border-border shrink-0 mr-6">
-                    <img src="img/life/life image 5.webp" alt="Life Off Screen" class="w-full h-full object-cover transition-transform duration-500 hover:scale-105">
+                <div
+                    class="w-[300px] h-[400px] bg-surface rounded-2xl overflow-hidden border border-border shrink-0 mr-6">
+                    <img src="img/life/life image 5.webp" alt="Life Off Screen"
+                        class="w-full h-full object-cover transition-transform duration-500 hover:scale-105">
                 </div>
-                <div class="w-[300px] h-[400px] bg-surface rounded-2xl overflow-hidden border border-border shrink-0 mr-6">
-                    <img src="img/life/life image 6.webp" alt="Life Off Screen" class="w-full h-full object-cover transition-transform duration-500 hover:scale-105">
+                <div
+                    class="w-[300px] h-[400px] bg-surface rounded-2xl overflow-hidden border border-border shrink-0 mr-6">
+                    <img src="img/life/life image 6.webp" alt="Life Off Screen"
+                        class="w-full h-full object-cover transition-transform duration-500 hover:scale-105">
                 </div>
-                <div class="w-[300px] h-[400px] bg-surface rounded-2xl overflow-hidden border border-border shrink-0 mr-6">
-                    <img src="img/life/life image 7.webp" alt="Life Off Screen" class="w-full h-full object-cover transition-transform duration-500 hover:scale-105">
+                <div
+                    class="w-[300px] h-[400px] bg-surface rounded-2xl overflow-hidden border border-border shrink-0 mr-6">
+                    <img src="img/life/life image 7.webp" alt="Life Off Screen"
+                        class="w-full h-full object-cover transition-transform duration-500 hover:scale-105">
                 </div>
-                <div class="w-[300px] h-[400px] bg-surface rounded-2xl overflow-hidden border border-border shrink-0 mr-6">
-                    <img src="img/life/life image 8.webp" alt="Life Off Screen" class="w-full h-full object-cover transition-transform duration-500 hover:scale-105">
+                <div
+                    class="w-[300px] h-[400px] bg-surface rounded-2xl overflow-hidden border border-border shrink-0 mr-6">
+                    <img src="img/life/life image 8.webp" alt="Life Off Screen"
+                        class="w-full h-full object-cover transition-transform duration-500 hover:scale-105">
                 </div>
-                <div class="w-[300px] h-[400px] bg-surface rounded-2xl overflow-hidden border border-border shrink-0 mr-6">
-                    <img src="img/life/life image 9.webp" alt="Life Off Screen" class="w-full h-full object-cover transition-transform duration-500 hover:scale-105">
+                <div
+                    class="w-[300px] h-[400px] bg-surface rounded-2xl overflow-hidden border border-border shrink-0 mr-6">
+                    <img src="img/life/life image 9.webp" alt="Life Off Screen"
+                        class="w-full h-full object-cover transition-transform duration-500 hover:scale-105">
                 </div>
 
             </div>
@@ -864,48 +1016,66 @@
     </section>
 
     <!-- FOOTER -->
-    <footer id="contact" class="py-32 px-6 md:px-12 bg-bg text-center relative z-10 border-t border-border overflow-hidden">
+    <footer id="contact"
+        class="py-32 px-6 md:px-12 bg-bg text-center relative z-10 border-t border-border overflow-hidden">
         <!-- Footer Glow -->
-        <div class="absolute bottom-0 left-1/2 -translate-x-1/2 w-[800px] h-[500px] bg-[#829DF1]/5 rounded-full blur-[150px] pointer-events-none"></div>
+        <div
+            class="absolute bottom-0 left-1/2 -translate-x-1/2 w-[800px] h-[500px] bg-[#829DF1]/5 rounded-full blur-[150px] pointer-events-none">
+        </div>
 
         <div class="max-w-[1400px] mx-auto relative z-10">
-            
+
             <!-- 1. Giant CTA -->
             <h2 class="text-6xl md:text-9xl font-serif italic font-medium tracking-tight mb-16 text-white reveal">
                 Let's break the ice.
             </h2>
-            
+
             <!-- 2. Magnetic Action -->
             <div class="flex justify-center mb-24 reveal delay-100">
-                <a href="https://calendly.com/itsdurgeshray/ice-breaking-call/" class="group relative w-48 h-48 md:w-64 md:h-64 rounded-full border border-[#829DF1]/30 flex items-center justify-center hover:bg-[#829DF1] hover:border-[#829DF1] transition-all duration-500 hover-target hover:scale-110">
-                     <div class="absolute inset-0 rounded-full bg-[#829DF1]/10 scale-0 group-hover:scale-150 transition-transform duration-700 ease-out"></div>
-                     <div class="flex flex-col items-center gap-2 relative z-10">
-                        <span class="text-sm font-sans font-bold uppercase tracking-widest text-[#829DF1] group-hover:text-[#020617]">Start Project</span>
-                        <i class="fas fa-arrow-right -rotate-45 text-2xl text-[#829DF1] group-hover:text-[#020617] transition-transform group-hover:rotate-0"></i>
-                     </div>
+                <a href="https://calendly.com/itsdurgeshray/ice-breaking-call/"
+                    class="group relative w-48 h-48 md:w-64 md:h-64 rounded-full border border-[#829DF1]/30 flex items-center justify-center hover:bg-[#829DF1] hover:border-[#829DF1] transition-all duration-500 hover-target hover:scale-110">
+                    <div
+                        class="absolute inset-0 rounded-full bg-[#829DF1]/10 scale-0 group-hover:scale-150 transition-transform duration-700 ease-out">
+                    </div>
+                    <div class="flex flex-col items-center gap-2 relative z-10">
+                        <span
+                            class="text-sm font-sans font-bold uppercase tracking-widest text-[#829DF1] group-hover:text-[#020617]">Start
+                            Project</span>
+                        <i
+                            class="fas fa-arrow-right -rotate-45 text-2xl text-[#829DF1] group-hover:text-[#020617] transition-transform group-hover:rotate-0"></i>
+                    </div>
                 </a>
             </div>
 
             <!-- 3. Email & Socials Grid -->
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 border-t border-white/10 pt-12 reveal delay-200 text-left md:text-center">
-                
+            <div
+                class="grid grid-cols-1 md:grid-cols-3 gap-8 border-t border-white/10 pt-12 reveal delay-200 text-left md:text-center">
+
                 <div class="flex flex-col gap-2 md:items-start">
                     <span class="text-xs font-sans text-muted uppercase tracking-widest">Contact</span>
-                    <a href="mailto:iamdurgeshkumarofficial@gmail.com" class="text-lg font-sans font-medium text-white hover:text-[#829DF1] transition-colors hover-target">hello@durgesh.ray</a>
+                    <a href="mailto:iamdurgeshkumarofficial@gmail.com"
+                        class="text-lg font-sans font-medium text-white hover:text-[#829DF1] transition-colors hover-target">hello@durgesh.ray</a>
                 </div>
 
                 <div class="flex flex-col gap-2 md:items-center">
                     <span class="text-xs font-sans text-muted uppercase tracking-widest">Socials</span>
                     <div class="flex gap-6 justify-center">
-                         <a href="https://www.x.com/itsdurgeshray/" target="_blank" class="text-white hover:text-[#829DF1] transition-colors hover-target"><i class="fas fa-times text-xl"></i></a>
-                         <a href="https://www.dribbble.com/itsdurgeshray/" target="_blank" class="text-white hover:text-[#829DF1] transition-colors hover-target"><i class="fab fa-dribbble text-xl"></i></a>
-                         <a href="https://www.medium.com/@itsdurgeshray/" target="_blank" class="text-white hover:text-[#829DF1] transition-colors hover-target"><i class="fab fa-medium text-xl"></i></a>
+                        <a href="https://www.x.com/itsdurgeshray/" target="_blank"
+                            class="text-white hover:text-[#829DF1] transition-colors hover-target"><i
+                                class="fas fa-times text-xl"></i></a>
+                        <a href="https://www.dribbble.com/itsdurgeshray/" target="_blank"
+                            class="text-white hover:text-[#829DF1] transition-colors hover-target"><i
+                                class="fab fa-dribbble text-xl"></i></a>
+                        <a href="https://www.medium.com/@itsdurgeshray/" target="_blank"
+                            class="text-white hover:text-[#829DF1] transition-colors hover-target"><i
+                                class="fab fa-medium text-xl"></i></a>
                     </div>
                 </div>
 
                 <div class="flex flex-col gap-2 md:items-end">
                     <span class="text-xs font-sans text-muted uppercase tracking-widest">Location</span>
-                    <span class="text-lg font-sans font-medium text-white">India <span id="time" class="text-muted text-sm ml-2"></span></span>
+                    <span class="text-lg font-sans font-medium text-white">India <span id="time"
+                            class="text-muted text-sm ml-2"></span></span>
                 </div>
             </div>
 
@@ -926,21 +1096,21 @@
         // 2. Time
         function updateTime() {
             const now = new Date();
-            document.getElementById('time').textContent = now.toLocaleTimeString('en-US', {hour: '2-digit', minute: '2-digit', timeZone: 'Asia/Kolkata'}) + ' IST';
+            document.getElementById('time').textContent = now.toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit', timeZone: 'Asia/Kolkata' }) + ' IST';
         }
         setInterval(updateTime, 1000);
         updateTime();
 
         // 3. Hero Animation Loop
         const hero = document.getElementById('hero-anim');
-        
+
         function toggleAnimation() {
             hero.classList.add('active');
             setTimeout(() => {
                 hero.classList.remove('active');
-            }, 2500); 
+            }, 2500);
         }
-        
+
         // Initial trigger and interval
         setTimeout(toggleAnimation, 1000);
         setInterval(toggleAnimation, 5000);
@@ -948,10 +1118,11 @@
         // 4. Intersection Observer
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
-                if(entry.isIntersecting) entry.target.classList.add('active');
+                if (entry.isIntersecting) entry.target.classList.add('active');
             });
         }, { threshold: 0.1 });
         document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
     </script>
 </body>
+
 </html>
