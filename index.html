@@ -848,31 +848,41 @@
         <div class="flex flex-col gap-8">
             <!-- Project Card 1 -->
             <a href="https://www.figma.com/community/plugin/1575748759647058366" target="_blank"
-                class="group block p-4 md:p-6 bg-surface border border-border rounded-3xl hover:border-[#829DF1]/30 transition-all duration-500 hover-target reveal">
-                <div class="flex flex-col md:flex-row gap-6 md:gap-12 items-center">
-                    <!-- Image Container -->
-                    <div class="w-full md:w-[35%] aspect-[16/10] overflow-hidden rounded-2xl relative">
-                        <div class="absolute inset-0 bg-slate-900/10 group-hover:bg-transparent transition-colors z-10">
-                        </div>
-                        <img src="img/side-projects/pdf-import.webp" alt="PDF Import Plugin"
-                            class="w-full h-full object-cover transition-all duration-700 ease-out group-hover:scale-105">
-                    </div>
+                class="group block p-3 md:p-4 bg-surface border border-border rounded-3xl hover:border-[#829DF1]/30 transition-all duration-500 hover-target reveal">
 
-                    <div class="flex-1 space-y-4 md:pr-8 text-center md:text-left">
+                <!-- 1. Cinematic Image (Full Width) -->
+                <div class="w-full aspect-[16/9] md:aspect-[21/9] overflow-hidden rounded-2xl relative">
+                    <div class="absolute inset-0 bg-slate-900/10 group-hover:bg-transparent transition-colors z-10">
+                    </div>
+                    <img src="img/side-projects/pdf-import.webp" alt="PDF Import Plugin"
+                        class="w-full h-full object-cover transition-all duration-700 ease-out group-hover:scale-105">
+                </div>
+
+                <!-- 2. Content Grid (Below Image) -->
+                <div class="grid grid-cols-1 md:grid-cols-12 gap-6 md:gap-12 mt-6 md:mt-8 px-2 md:px-4 pb-2">
+
+                    <!-- Left: Title & CTA -->
+                    <div class="md:col-span-4 flex flex-col justify-between gap-4">
                         <h3
-                            class="text-2xl md:text-3xl font-serif italic text-white group-hover:text-[#829DF1] transition-colors">
-                            PDF Import</h3>
-                        <p class="text-muted font-sans text-sm leading-relaxed">
-                            A Figma plugin I built that enables importing PDFs into Figma—something not supported
-                            natively. It converts PDFs into high-resolution images using smart tiling, delivering
-                            instant, crisp results.
-                        </p>
+                            class="text-2xl md:text-4xl font-serif italic text-white group-hover:text-[#829DF1] transition-colors">
+                            PDF Import
+                        </h3>
                         <div
-                            class="pt-4 flex items-center justify-center md:justify-start gap-2 text-[#829DF1] text-[10px] font-sans font-bold uppercase tracking-widest group-hover:gap-4 transition-all">
+                            class="flex items-center gap-3 text-[#829DF1] text-[11px] font-sans font-bold uppercase tracking-widest group-hover:gap-5 transition-all">
                             <span>Try Plugin</span>
                             <i class="fas fa-arrow-right -rotate-45 group-hover:rotate-0 transition-transform"></i>
                         </div>
                     </div>
+
+                    <!-- Right: Description -->
+                    <div class="md:col-span-8">
+                        <p class="text-muted font-sans text-sm md:text-base leading-relaxed">
+                            A Figma plugin I built that enables importing PDFs into Figma—something not supported
+                            natively. It converts PDFs into high-resolution images using smart tiling, delivering
+                            instant, crisp results.
+                        </p>
+                    </div>
+
                 </div>
             </a>
         </div>
