@@ -246,10 +246,11 @@
                 </a>
 
                 <div
-                    class="flex gap-8 font-sans text-[11px] font-semibold text-muted uppercase tracking-widest items-center">
+                    class="flex gap-4 md:gap-8 font-sans text-[11px] font-semibold text-muted uppercase tracking-widest items-center">
                     <a href="#works" class="hover:text-[#829DF1] transition-colors hover-target">Works</a>
+                    <a href="#artifacts" class="hover:text-[#829DF1] transition-colors hover-target">Visuals</a>
+                    <a href="#live-designs" class="hover:text-[#829DF1] transition-colors hover-target">Designs</a>
                     <a href="#poems" class="hover:text-[#829DF1] transition-colors hover-target">Musings</a>
-                    <a href="#me" class="hover:text-[#829DF1] transition-colors hover-target">Me</a>
                 </div>
 
                 <a href="https://calendly.com/itsdurgeshray/ice-breaking-call"
@@ -697,6 +698,8 @@
                         class="h-12 md:h-16 w-auto opacity-60 hover:opacity-100 transition-opacity hover-target">
                     <img src="img/clients/clients-11.svg" alt="Client 11"
                         class="h-12 md:h-16 w-auto opacity-60 hover:opacity-100 transition-opacity hover-target">
+                    <img src="img/clients/client-12.svg" alt="Client 12"
+                        class="h-12 md:h-16 w-auto opacity-60 hover:opacity-100 transition-opacity hover-target">
                 </div>
 
                 <!-- SET 2 -->
@@ -722,6 +725,8 @@
                     <img src="img/clients/clients-10.svg" alt="Client 10"
                         class="h-12 md:h-16 w-auto opacity-60 hover:opacity-100 transition-opacity hover-target">
                     <img src="img/clients/clients-11.svg" alt="Client 11"
+                        class="h-12 md:h-16 w-auto opacity-60 hover:opacity-100 transition-opacity hover-target">
+                    <img src="img/clients/client-12.svg" alt="Client 12"
                         class="h-12 md:h-16 w-auto opacity-60 hover:opacity-100 transition-opacity hover-target">
                 </div>
             </div>
@@ -792,7 +797,7 @@
     </section>
 
     <!-- UI PLAYGROUND -->
-    <section class="py-32 border-t border-border bg-[#020617]/50 relative z-10">
+    <section id="artifacts" class="py-32 border-t border-border bg-[#020617]/50 relative z-10">
         <!-- Updated Header Layout -->
         <div
             class="flex flex-col md:flex-row md:items-end justify-between px-6 md:px-12 mb-12 reveal max-w-[1400px] mx-auto">
@@ -836,53 +841,215 @@
         </div>
     </section>
 
+    <!-- LIVE DESIGNS -->
+    <section id="live-designs" class="py-32 px-6 md:px-12 max-w-[1400px] mx-auto relative z-10 border-t border-border bg-[#020617]/50">
+        <div class="mb-16 reveal text-center md:text-left">
+            <h2 class="text-5xl md:text-7xl font-serif italic font-medium tracking-tight text-white mb-4">Living Products</h2>
+            <p class="text-muted font-sans text-sm max-w-xs mx-auto md:mx-0">Where static PRDs find their pulse and become living products.</p>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 border-t border-border reveal">
+            <!-- Project: Increddy -->
+            <a href="https://increddy.com/en" target="_blank"
+                class="group flex flex-col p-3 md:p-4 bg-surface border border-border rounded-3xl hover:border-[#829DF1]/30 transition-all duration-500 hover-target reveal">
+
+                <div class="w-full aspect-video overflow-hidden rounded-2xl relative shrink-0">
+                    <div class="absolute inset-0 bg-slate-900/10 group-hover:bg-transparent transition-colors z-10"></div>
+                    <img src="https://image.thum.io/get/width/640/crop/675/https://increddy.com/en" alt="Increddy Preview" loading="lazy"
+                        class="w-full h-full object-cover transition-all duration-700 ease-out group-hover:scale-105">
+                </div>
+
+                <div class="flex flex-col flex-grow justify-between mt-6 px-2 md:px-4 pb-2">
+                    <div class="flex flex-col gap-3">
+                        <div>
+                            <span class="text-[#829DF1] font-sans text-[9px] font-bold uppercase tracking-widest opacity-80 block mb-1">Lead Designer</span>
+                            <h3 class="text-2xl md:text-3xl font-serif italic text-white group-hover:text-[#829DF1] transition-colors leading-none truncate">
+                                Increddy
+                            </h3>
+                        </div>
+                        <p class="text-muted font-sans text-sm md:text-base leading-relaxed line-clamp-1">
+                            Conversion-optimized e-commerce platform for digital games.
+                        </p>
+                    </div>
+
+                    <div class="flex mt-6 w-full justify-between items-center border-t border-white/5 pt-4">
+                        <span class="text-[#829DF1] text-[10px] font-sans font-medium uppercase tracking-widest opacity-50">increddy.com</span>
+                        <div class="flex items-center gap-2 md:gap-3 text-[#829DF1] text-[11px] font-sans font-bold uppercase tracking-widest group-hover:gap-4 md:group-hover:gap-5 transition-all">
+                            <span>Visit Site</span>
+                            <i class="fas fa-arrow-right -rotate-45 group-hover:rotate-0 transition-transform"></i>
+                        </div>
+                    </div>
+                </div>
+            </a>
+            
+            <!-- Project: Heritage India Exports -->
+            <a href="https://heritageexports.co.in" target="_blank"
+                class="group flex flex-col p-3 md:p-4 bg-surface border border-border rounded-3xl hover:border-[#829DF1]/30 transition-all duration-500 hover-target reveal">
+
+                <div class="w-full aspect-video overflow-hidden rounded-2xl relative shrink-0">
+                    <div class="absolute inset-0 bg-slate-900/10 group-hover:bg-transparent transition-colors z-10"></div>
+                    <img src="https://image.thum.io/get/width/640/crop/675/https://heritageexports.co.in" alt="Heritage Exports Preview" loading="lazy"
+                        class="w-full h-full object-cover transition-all duration-700 ease-out group-hover:scale-105">
+                </div>
+
+                <div class="flex flex-col flex-grow justify-between mt-6 px-2 md:px-4 pb-2">
+                    <div class="flex flex-col gap-3">
+                        <div>
+                            <span class="text-[#829DF1] font-sans text-[9px] font-bold uppercase tracking-widest opacity-80 block mb-1">Associate Designer</span>
+                            <h3 class="text-2xl md:text-3xl font-serif italic text-white group-hover:text-[#829DF1] transition-colors leading-none truncate">
+                                Heritage Exports
+                            </h3>
+                        </div>
+                        <p class="text-muted font-sans text-sm md:text-base leading-relaxed line-clamp-1">
+                            B2B digital showcase for a premier manufacturing export powerhouse.
+                        </p>
+                    </div>
+
+                    <div class="flex mt-6 w-full justify-between items-center border-t border-white/5 pt-4">
+                        <span class="text-[#829DF1] text-[10px] font-sans font-medium uppercase tracking-widest opacity-50">heritageexports.co.in</span>
+                        <div class="flex items-center gap-2 md:gap-3 text-[#829DF1] text-[11px] font-sans font-bold uppercase tracking-widest group-hover:gap-4 md:group-hover:gap-5 transition-all">
+                            <span>Visit Site</span>
+                            <i class="fas fa-arrow-right -rotate-45 group-hover:rotate-0 transition-transform"></i>
+                        </div>
+                    </div>
+                </div>
+            </a>
+            
+            <!-- Project: Neuzorg -->
+            <a href="https://www.neuzorg.com" target="_blank"
+                class="group flex flex-col p-3 md:p-4 bg-surface border border-border rounded-3xl hover:border-[#829DF1]/30 transition-all duration-500 hover-target reveal">
+
+                <div class="w-full aspect-video overflow-hidden rounded-2xl relative shrink-0">
+                    <div class="absolute inset-0 bg-slate-900/10 group-hover:bg-transparent transition-colors z-10"></div>
+                    <img src="https://image.thum.io/get/width/640/crop/675/https://www.neuzorg.com" alt="Neuzorg Preview" loading="lazy"
+                        class="w-full h-full object-cover transition-all duration-700 ease-out group-hover:scale-105">
+                </div>
+
+                <div class="flex flex-col flex-grow justify-between mt-6 px-2 md:px-4 pb-2">
+                    <div class="flex flex-col gap-3">
+                        <div>
+                            <span class="text-[#829DF1] font-sans text-[9px] font-bold uppercase tracking-widest opacity-80 block mb-1">Associate Designer</span>
+                            <h3 class="text-2xl md:text-3xl font-serif italic text-white group-hover:text-[#829DF1] transition-colors leading-none truncate">
+                                Neuzorg
+                            </h3>
+                        </div>
+                        <p class="text-muted font-sans text-sm md:text-base leading-relaxed line-clamp-1">
+                            Clear and trustworthy service platform for facility management.
+                        </p>
+                    </div>
+
+                    <div class="flex mt-6 w-full justify-between items-center border-t border-white/5 pt-4">
+                        <span class="text-[#829DF1] text-[10px] font-sans font-medium uppercase tracking-widest opacity-50">neuzorg.com</span>
+                        <div class="flex items-center gap-2 md:gap-3 text-[#829DF1] text-[11px] font-sans font-bold uppercase tracking-widest group-hover:gap-4 md:group-hover:gap-5 transition-all">
+                            <span>Visit Site</span>
+                            <i class="fas fa-arrow-right -rotate-45 group-hover:rotate-0 transition-transform"></i>
+                        </div>
+                    </div>
+                </div>
+            </a>
+            
+            <!-- Project: Ownerpreneur -->
+            <a href="https://ownerpreneur.com" target="_blank"
+                class="group flex flex-col p-3 md:p-4 bg-surface border border-border rounded-3xl hover:border-[#829DF1]/30 transition-all duration-500 hover-target reveal">
+
+                <div class="w-full aspect-video overflow-hidden rounded-2xl relative shrink-0">
+                    <div class="absolute inset-0 bg-slate-900/10 group-hover:bg-transparent transition-colors z-10"></div>
+                    <img src="https://image.thum.io/get/width/640/crop/675/https://ownerpreneur.com" alt="Ownerpreneur Preview" loading="lazy"
+                        class="w-full h-full object-cover transition-all duration-700 ease-out group-hover:scale-105">
+                </div>
+
+                <div class="flex flex-col flex-grow justify-between mt-6 px-2 md:px-4 pb-2">
+                    <div class="flex flex-col gap-3">
+                        <div>
+                            <span class="text-[#829DF1] font-sans text-[9px] font-bold uppercase tracking-widest opacity-80 block mb-1">Design Intern</span>
+                            <h3 class="text-2xl md:text-3xl font-serif italic text-white group-hover:text-[#829DF1] transition-colors leading-none truncate">
+                                Ownerpreneur
+                            </h3>
+                        </div>
+                        <p class="text-muted font-sans text-sm md:text-base leading-relaxed line-clamp-1">
+                            Engaging digital community platform empowering business leaders.
+                        </p>
+                    </div>
+
+                    <div class="flex mt-6 w-full justify-between items-center border-t border-white/5 pt-4">
+                        <span class="text-[#829DF1] text-[10px] font-sans font-medium uppercase tracking-widest opacity-50">ownerpreneur.com</span>
+                        <div class="flex items-center gap-2 md:gap-3 text-[#829DF1] text-[11px] font-sans font-bold uppercase tracking-widest group-hover:gap-4 md:group-hover:gap-5 transition-all">
+                            <span>Visit Site</span>
+                            <i class="fas fa-arrow-right -rotate-45 group-hover:rotate-0 transition-transform"></i>
+                        </div>
+                    </div>
+                </div>
+            </a>
+        </div>
+    </section>
+
     <!-- SIDE PROJECTS -->
     <section id="side-projects"
-        class="py-32 px-6 md:px-12 max-w-[1200px] mx-auto relative z-10 border-t border-border bg-[#020617]/50">
+        class="py-32 px-6 md:px-12 max-w-[1400px] mx-auto relative z-10 border-t border-border bg-[#020617]/50">
         <div class="mb-16 reveal text-center md:text-left">
             <h2 class="text-5xl md:text-7xl font-serif italic font-medium tracking-tight text-white mb-4">Side Quests
             </h2>
             <p class="text-muted font-sans text-sm max-w-xs mx-auto md:mx-0">Experiments born from curiosity.</p>
         </div>
 
-        <div class="flex flex-col gap-8">
-            <!-- Project Card 1 -->
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+            <!-- Project Card 1: PDF Import -->
             <a href="https://www.figma.com/community/plugin/1575748759647058366" target="_blank"
-                class="group block p-3 md:p-4 bg-surface border border-border rounded-3xl hover:border-[#829DF1]/30 transition-all duration-500 hover-target reveal">
+                class="group flex flex-col p-3 md:p-4 bg-surface border border-border rounded-3xl hover:border-[#829DF1]/30 transition-all duration-500 hover-target reveal">
 
-                <!-- 1. Cinematic Image (Full Width) -->
-                <div class="w-full aspect-video overflow-hidden rounded-2xl relative">
-                    <div class="absolute inset-0 bg-slate-900/10 group-hover:bg-transparent transition-colors z-10">
-                    </div>
+                <div class="w-full aspect-video overflow-hidden rounded-2xl relative shrink-0">
+                    <div class="absolute inset-0 bg-slate-900/10 group-hover:bg-transparent transition-colors z-10"></div>
                     <img src="img/side-projects/pdf-import.webp" alt="PDF Import Plugin"
                         class="w-full h-full object-cover transition-all duration-700 ease-out group-hover:scale-105">
                 </div>
 
-                <!-- 2. Content Grid (Below Image) -->
-                <div class="grid grid-cols-1 md:grid-cols-12 gap-6 md:gap-12 mt-6 md:mt-8 px-2 md:px-4 pb-2 items-end">
-
-                    <!-- Left: Title & Description -->
-                    <div class="md:col-span-8 flex flex-col gap-4">
-                        <h3
-                            class="text-2xl md:text-4xl font-serif italic text-white group-hover:text-[#829DF1] transition-colors">
+                <div class="flex flex-col flex-grow justify-between mt-6 px-2 md:px-4 pb-2">
+                    <div class="flex flex-col gap-3">
+                        <h3 class="text-2xl md:text-3xl font-serif italic text-white group-hover:text-[#829DF1] transition-colors">
                             PDF Import
                         </h3>
-                        <p class="text-muted font-sans text-sm md:text-base leading-relaxed max-w-2xl">
-                            A Figma plugin I built that enables importing PDFs into Figma—something not supported
-                            natively. It converts PDFs into high-resolution images using smart tiling, delivering
-                            instant, crisp results.
+                        <p class="text-muted font-sans text-sm md:text-base leading-relaxed">
+                            A Figma plugin I built that enables importing PDFs into Figma—something not supported natively. It converts PDFs into high-resolution images using smart tiling, delivering instant, crisp results.
                         </p>
                     </div>
 
-                    <!-- Right: CTA -->
-                    <div class="md:col-span-4 flex md:justify-end pb-1">
-                        <div
-                            class="flex items-center gap-3 text-[#829DF1] text-[11px] font-sans font-bold uppercase tracking-widest group-hover:gap-5 transition-all">
+                    <div class="flex mt-6 w-full justify-between items-center">
+                        <span class="text-[#829DF1] text-[10px] font-sans font-bold uppercase tracking-widest opacity-50">Figma Plugin</span>
+                        <div class="flex items-center gap-3 text-[#829DF1] text-[11px] font-sans font-bold uppercase tracking-widest group-hover:gap-5 transition-all">
                             <span>Try Plugin</span>
                             <i class="fas fa-arrow-right -rotate-45 group-hover:rotate-0 transition-transform"></i>
                         </div>
                     </div>
+                </div>
+            </a>
 
+            <!-- Project Card 2: Systematic -->
+            <a href="https://www.figma.com/community/plugin/1621926620705103212" target="_blank"
+                class="group flex flex-col p-3 md:p-4 bg-surface border border-border rounded-3xl hover:border-[#829DF1]/30 transition-all duration-500 hover-target reveal delay-100">
+
+                <div class="w-full aspect-video overflow-hidden rounded-2xl relative shrink-0">
+                    <div class="absolute inset-0 bg-slate-900/10 group-hover:bg-transparent transition-colors z-10"></div>
+                    <img src="img/side-projects/systematic.webp" alt="Systematic Plugin"
+                        class="w-full h-full object-cover transition-all duration-700 ease-out group-hover:scale-105">
+                </div>
+
+                <div class="flex flex-col flex-grow justify-between mt-6 px-2 md:px-4 pb-2">
+                    <div class="flex flex-col gap-3">
+                        <h3 class="text-2xl md:text-3xl font-serif italic text-white group-hover:text-[#829DF1] transition-colors">
+                            Systematic
+                        </h3>
+                        <p class="text-muted font-sans text-sm md:text-base leading-relaxed">
+                            A powerful system organizer for Figma that dramatically accelerates structural design workflows. It automatically organizes your layers, variables, and local styles into a systematic, scalable foundation.
+                        </p>
+                    </div>
+
+                    <div class="flex mt-6 w-full justify-between items-center">
+                        <span class="text-[#829DF1] text-[10px] font-sans font-bold uppercase tracking-widest opacity-50">Figma Plugin</span>
+                        <div class="flex items-center gap-3 text-[#829DF1] text-[11px] font-sans font-bold uppercase tracking-widest group-hover:gap-5 transition-all">
+                            <span>Try Plugin</span>
+                            <i class="fas fa-arrow-right -rotate-45 group-hover:rotate-0 transition-transform"></i>
+                        </div>
+                    </div>
                 </div>
             </a>
         </div>
@@ -890,7 +1057,7 @@
 
     <!-- VERSES (Tall Portrait Images) -->
     <section id="poems"
-        class="py-32 px-6 md:px-12 max-w-[1200px] mx-auto relative z-10 border-t border-border bg-[#020617]/50">
+        class="py-32 px-6 md:px-12 max-w-[1400px] mx-auto relative z-10 border-t border-border bg-[#020617]/50">
         <div class="mb-16 reveal text-center md:text-left">
             <h2 class="text-5xl md:text-7xl font-serif italic font-medium tracking-tight text-white mb-4">Voided Verses
             </h2>
